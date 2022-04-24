@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d4f866b19ac9247be5995fb5b00cd3, type: 3}
+  m_Name: ItemDataList_SO
+  m_EditorClassIdentifier: 
+  itemDetails:
+  - itemID: 1001
+    itemName: "\u6E38\u620F\u673A"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: f98d29cfcd99f8840a4dee07218d0bdf, type: 3}
+    itemOnWorldSprite: {fileID: 21300000, guid: f98d29cfcd99f8840a4dee07218d0bdf, type: 3}
+    itemDescription: "\u8FD9\u662F\u4E00\u4E2A\u666E\u901A\u7684\u6E38\u620F\u673A"
+    canPickup: 0
+    canDrop: 0
+    itemPrice: 0
+  - itemID: 1002
+    itemName: "\u897F\u74DC"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: 64961f2c53248644c8b8476e2bbc5608, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    canPickup: 1
+    canDrop: 0
+    itemPrice: 0
+  - itemID: 1003
+    itemName: "\u5357\u74DC"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: dc3fb943a9aeabf4da84a99e30900444, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    canPickup: 0
+    canDrop: 0
+    itemPrice: 0
+  - itemID: 1004
+    itemName: "\u5783\u573E\u6876"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: ff8b78101fe56cb4bbdb9ee679139a28, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: "\u5783\u573E\u6876"
+    canPickup: 1
+    canDrop: 0
+    itemPrice: 0
