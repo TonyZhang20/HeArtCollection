@@ -32,7 +32,10 @@ public class ShowItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     private void OnDisable() 
     {
-        inventoryUI.itemTip.gameObject.SetActive(false);
+        if(inventoryUI != null)
+        {
+            inventoryUI.itemTip.gameObject.SetActive(false);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

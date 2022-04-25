@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
 
     public bool inputDisable;
-    private bool isMoving = false;
     private Animator anim;
 
     void Awake()
@@ -68,15 +67,6 @@ public class PlayerController : MonoBehaviour
         {
             inputX *= 0.7f;
             inputY *= 0.7f;
-        }
-
-        if(!Mathf.Approximately(0, inputX) || !Mathf.Approximately(0, inputY))
-        {
-            isMoving = true;
-        }
-        else if(Mathf.Approximately(0, inputX) && Mathf.Approximately(0, inputY))
-        {
-            isMoving = false;
         }
 
         movementInput = new Vector2(inputX, inputY);

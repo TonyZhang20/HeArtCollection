@@ -12,7 +12,7 @@ public class ItemDetails
     public Sprite itemOnWorldSprite;
     [TextArea]
     public string itemDescription;
-    public bool canPickup;
+    public bool canPickup = true;
     public bool canDrop;
     public int itemPrice;
 

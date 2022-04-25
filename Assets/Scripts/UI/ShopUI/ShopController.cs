@@ -15,13 +15,14 @@ public class ShopController : MonoBehaviour
     [SerializeField] private Button buttonN;
     public void ItemClicked()
     {
-        DisableButton();
         item = GetComponent<Item>();
+        DisableButton();
         StartCoroutine(showText(mText));
         if (item != null)
         {
             showButton();
         }
+        
     }
 
     private IEnumerator showText(string text)
@@ -64,6 +65,8 @@ public class ShopController : MonoBehaviour
     {
         var PlayerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
+        Debug.Log(item.itemDetails.itemID);
+
         if (PlayerMoney.Money >= item.itemDetails.itemPrice && item.itemDetails.canPickup)
         {
             Debug.Log(item.itemDetails.itemPrice.ToString() + PlayerMoney.Money);
@@ -79,6 +82,7 @@ public class ShopController : MonoBehaviour
         {
             if (!item.itemDetails.canPickup)
             {
+                Debug.Log(item.itemID);
                 StartCoroutine(showText("小孩子不准吸烟！"));
                 DisableButton();
             }

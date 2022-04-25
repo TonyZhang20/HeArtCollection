@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8638156356244967595}
   - component: {fileID: 8638156356244967594}
   - component: {fileID: 8485467121126261248}
+  - component: {fileID: 8216132375890027191}
   m_Layer: 5
   m_Name: Slot_Bag
   m_TagString: Untagged
@@ -244,6 +245,19 @@ MonoBehaviour:
     canDrop: 0
     itemPrice: 0
   itemAmount: 0
+  slotIndex: 0
+--- !u!114 &8216132375890027191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638156356244967599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8971c25b9cdb5541ae43c2d02697fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8638156356487759280
 GameObject:
   m_ObjectHideFlags: 0

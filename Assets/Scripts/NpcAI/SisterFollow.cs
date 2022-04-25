@@ -38,7 +38,7 @@ public class SisterFollow : MonoBehaviour
         if (isChasing)
         {
             SetupAnimation();
-            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Speed);
+            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Speed * Time.deltaTime);
         }
     }
 

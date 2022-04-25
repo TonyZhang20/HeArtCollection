@@ -8,13 +8,23 @@ public class Item : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public ItemDetails itemDetails;
     private BoxCollider2D coll;
-    void Awake() {
+    void Awake()
+    {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
     }
+    private void OnEnable()
+    {
+        Init(itemID);
+    }
 
-    private void Start() {
-        if(itemID == 0)
+    protected void OnDisable()
+    {
+    }
+
+    private void CallItemID()
+    {
+        if (itemID == 0)
         {
             Debug.Log("未设置" + this.gameObject.name + "的物品ID");
         }
@@ -25,20 +35,20 @@ public class Item : MonoBehaviour
     {
         itemDetails = InventoryManager.Instance.GetItemDetails(ID);
 
-        if(itemDetails == null)
+        if (itemDetails == null)
         {
             Debug.Log("背包" + gameObject.name + "物品序号错误 ，储存库中并未有该物品，请添加或者检查ID");
             return;
         }
 
-        if(spriteRenderer == null) return;
-        
+        if (spriteRenderer == null) return;
+
         spriteRenderer.sprite = itemDetails.itemOnWorldSprite != null ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
 
         //修改collider尺寸
         Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
         coll.size = newSize;
-        coll.offset = new Vector2(0, spriteRenderer.sprite.bounds.center.y); 
+        coll.offset = new Vector2(0, spriteRenderer.sprite.bounds.center.y);
     }
 
 }
