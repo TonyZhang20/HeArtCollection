@@ -2645,10 +2645,7 @@ GameObject:
   - component: {fileID: 1222919825}
   - component: {fileID: 1222919827}
   - component: {fileID: 1222919826}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 1222919828}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: "\u5C0F\u5356\u90E8"
   m_TagString: Building
@@ -2709,8 +2706,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.14327, y: 0.9689394}
   m_EdgeRadius: 0
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1222919828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,7 +2718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054885c611caf754a8f241918622cfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &1251375412
 GameObject:
   m_ObjectHideFlags: 0
