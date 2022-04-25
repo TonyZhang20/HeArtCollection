@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 278399823}
   - component: {fileID: 278399825}
   - component: {fileID: 278399824}
+  - component: {fileID: 278399826}
   m_Layer: 0
   m_Name: GrandMom
   m_TagString: Untagged
@@ -653,6 +654,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.98, y: 1.78}
   m_EdgeRadius: 0
+--- !u!114 &278399826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278399818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63da6321219a6745b794123a7d4fec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePosition: {x: 0.8, y: 0.8, z: 0}
 --- !u!1 &318628275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,12 +2012,12 @@ GameObject:
   - component: {fileID: 1553747591}
   - component: {fileID: 1553747590}
   m_Layer: 0
-  m_Name: GroundMon
+  m_Name: GrandMon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1553747589
 Transform:
   m_ObjectHideFlags: 0
