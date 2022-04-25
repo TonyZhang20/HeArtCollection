@@ -13,7 +13,11 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 movementInput;
 
+<<<<<<< Updated upstream
     private bool inputDisable;
+=======
+    public bool inputDisable;
+>>>>>>> Stashed changes
 
     void Awake()
     {
@@ -45,7 +49,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+<<<<<<< Updated upstream
         Movement();
+=======
+        if(inputDisable == false)
+        {
+            Movement();
+        }
+>>>>>>> Stashed changes
     }
 
     private void PlayerInput()

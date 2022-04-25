@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/d-Home.unity
     guid: a9e6db10ce8a132428b9bf080d8f9d4e
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/Need/UI.unity
+    guid: 0899f5a26b9f55f428517d2ecd0590be
+>>>>>>> Stashed changes
   m_configObjects: {}

@@ -19,7 +19,11 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: f98d29cfcd99f8840a4dee07218d0bdf, type: 3}
     itemOnWorldSprite: {fileID: 21300000, guid: f98d29cfcd99f8840a4dee07218d0bdf, type: 3}
     itemDescription: "\u8FD9\u662F\u4E00\u4E2A\u666E\u901A\u7684\u6E38\u620F\u673A"
+<<<<<<< Updated upstream
     canPickup: 0
+=======
+    canPickup: 1
+>>>>>>> Stashed changes
     canDrop: 0
     itemPrice: 0
   - itemID: 1002
@@ -37,6 +41,7 @@ MonoBehaviour:
     itemIcon: {fileID: 21300000, guid: dc3fb943a9aeabf4da84a99e30900444, type: 3}
     itemOnWorldSprite: {fileID: 0}
     itemDescription: 
+<<<<<<< Updated upstream
     canPickup: 0
     canDrop: 0
     itemPrice: 0
@@ -49,3 +54,35 @@ MonoBehaviour:
     canPickup: 1
     canDrop: 0
     itemPrice: 0
+=======
+    canPickup: 1
+    canDrop: 0
+    itemPrice: 0
+  - itemID: 1004
+    itemName: "\u706B\u817F\u80A0"
+    itemType: 1
+    itemIcon: {fileID: 21300000, guid: 3de1e2ee8de75a64098ccb47814584a2, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: "\u7F8E\u5473\u7684\u706B\u817F\u80A0\uFF0C\u9694\u58C1\u7684\u5C0F\u5B69\u90FD\u770B\u54ED\u5566\uFF01"
+    canPickup: 1
+    canDrop: 0
+    itemPrice: 5
+  - itemID: 1005
+    itemName: "\u70DF"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: 0b3406fd7c211b44285ebb7567764f5c, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: "\u5438\u70DF\u6709\u5BB3\u5065\u5EB7\uFF01"
+    canPickup: 0
+    canDrop: 0
+    itemPrice: 50
+  - itemID: 1006
+    itemName: "\u76D0"
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: 4e9ca10a62264d54f817b7fa5e0471b3, type: 3}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: "\u4E00\u888B\u76D0\uFF0C\u4E0A\u9762\u5199\u7740\u5E7F\u544A\u8BED\uFF0C\u4E3A\u6211\u81EA\u5DF1\u888B\u76D0\uFF01"
+    canPickup: 1
+    canDrop: 0
+    itemPrice: 20
+>>>>>>> Stashed changes

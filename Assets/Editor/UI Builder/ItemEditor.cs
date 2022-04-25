@@ -18,7 +18,11 @@ public class ItemEditor : EditorWindow
     private VisualElement iconPreview;
     private Sprite defaultIcon;
 
+<<<<<<< Updated upstream
     [MenuItem("Tool/ItemEditor")]
+=======
+    [MenuItem("Tools/ItemEditor")]
+>>>>>>> Stashed changes
     public static void ShowExample()
     {
         ItemEditor wnd = GetWindow<ItemEditor>();

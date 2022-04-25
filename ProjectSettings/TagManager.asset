@@ -8,6 +8,11 @@ TagManager:
   - PickupCanvas
   - Item
   - Building
+<<<<<<< Updated upstream
+=======
+  - Shop
+  - Canteen
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

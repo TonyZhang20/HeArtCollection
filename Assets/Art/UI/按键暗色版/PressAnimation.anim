@@ -31,7 +31,11 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
+<<<<<<< Updated upstream
         value: -1.1
+=======
+        value: -0.15
+>>>>>>> Stashed changes
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -59,7 +63,11 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
+<<<<<<< Updated upstream
         value: 0.6
+=======
+        value: 0.1
+>>>>>>> Stashed changes
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -152,7 +160,11 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
+<<<<<<< Updated upstream
         value: -1.1
+=======
+        value: -0.15
+>>>>>>> Stashed changes
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -180,7 +192,11 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
+<<<<<<< Updated upstream
         value: 0.6
+=======
+        value: 0.1
+>>>>>>> Stashed changes
         inSlope: 0
         outSlope: 0
         tangentMode: 136

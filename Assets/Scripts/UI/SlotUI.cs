@@ -18,6 +18,12 @@ public class SlotUI : MonoBehaviour
     public ItemDetails itemDetails;
     public int itemAmount;
     public int slotIndex;
+<<<<<<< Updated upstream
+=======
+
+    private InventoryUI inventoryUI => GetComponent<InventoryUI>();
+    
+>>>>>>> Stashed changes
     void Start() 
     {
         isSelected = false;
