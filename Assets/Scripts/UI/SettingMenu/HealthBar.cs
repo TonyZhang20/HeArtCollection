@@ -24,6 +24,7 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         anim.SetTrigger("Down");
+        Debug.Log("Run");
     }
     public void OnPointerExit(PointerEventData eventData)
     {

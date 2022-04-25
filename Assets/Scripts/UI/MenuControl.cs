@@ -20,6 +20,7 @@ public class MenuControl : MonoBehaviour
                 menu.SetActive(false);
             else
                 menu.SetActive(true);
+            Debug.Log("Run");
         }    
     }
 }
