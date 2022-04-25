@@ -11,6 +11,7 @@ public class TransitionManager : SingleTon<TransitionManager>
 
     private void Start()
     {
+        SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         StartCoroutine(loadSceneSetActive(startSceneName));
         fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
     }
@@ -18,26 +19,29 @@ public class TransitionManager : SingleTon<TransitionManager>
     private void OnEnable()
     {
         EventHandler.TransitionEvent += OnTransitionEvent;
+        EventHandler.AfterSceneLoadEvent += findCanvasGroup;
     }
 
     private void OnDisable()
     {
         EventHandler.TransitionEvent -= OnTransitionEvent;
+        EventHandler.AfterSceneLoadEvent -= findCanvasGroup;
+    }
+    
+    private void findCanvasGroup()
+    {
+        fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
     }
 
     private void OnTransitionEvent(string sceneName, Vector3 targetPosition)
     {
+        //Debug.Log(targetPosition);
         if(!isFade)
         {
             StartCoroutine(ChangeScene(sceneName, targetPosition));
         }
     }
 
-    /// <summary>
-    /// 加载场景并设置为激活
-    /// </summary>
-    /// <param name="sceneName"></param>
-    /// <returns></returns>
     private IEnumerator loadSceneSetActive(string sceneName)
     {
         //yield return FadeLoadingPage(0);
@@ -47,30 +51,20 @@ public class TransitionManager : SingleTon<TransitionManager>
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
 
         SceneManager.SetActiveScene(newScene);
-        //执行所有卸载场景后的function
         EventHandler.CallAfterSceneLoadedEvent();
 
     }
 
-    /// <summary>
-    /// 切换场景
-    /// </summary>
-    /// <param name="sceneName"></param>
-    /// <returns></returns>
     public IEnumerator ChangeScene(string sceneName, Vector3 targetPosition)
     {
         yield return FadeLoadingPage(1);
 
-        //执行所有卸载场景前的function
         EventHandler.CallBeforeSceneLoadEvent();
 
-        //卸载场景
         yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
-        //加载场景
         yield return loadSceneSetActive(sceneName);
 
-        //移动人物
         EventHandler.CallMoveToPosition(targetPosition);
 
         yield return FadeLoadingPage(0);

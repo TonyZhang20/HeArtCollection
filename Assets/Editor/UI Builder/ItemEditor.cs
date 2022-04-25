@@ -18,7 +18,7 @@ public class ItemEditor : EditorWindow
     private VisualElement iconPreview;
     private Sprite defaultIcon;
 
-    [MenuItem("Tool/ItemEditor")]
+    [MenuItem("Tools/ItemEditor")]
     public static void ShowExample()
     {
         ItemEditor wnd = GetWindow<ItemEditor>();

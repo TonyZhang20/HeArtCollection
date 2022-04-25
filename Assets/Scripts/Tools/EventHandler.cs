@@ -34,4 +34,10 @@ public class EventHandler
     {
         MoveToPosition?.Invoke(targetPosition);
     }
+
+    public static event Action<DialoguePiece> ShowDialogueEvent;
+    public static void CallShowDialogueEvent(DialoguePiece dialoguePiece)
+    {
+        ShowDialogueEvent?.Invoke(dialoguePiece);
+    }
 }

@@ -18,6 +18,9 @@ public class SlotUI : MonoBehaviour
     public ItemDetails itemDetails;
     public int itemAmount;
     public int slotIndex;
+
+    private InventoryUI inventoryUI => GetComponent<InventoryUI>();
+    
     void Start() 
     {
         isSelected = false;

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 movementInput;
 
-    private bool inputDisable;
+    public bool inputDisable;
 
     void Awake()
     {
@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        if(inputDisable == false)
+        {
+            Movement();
+        }
     }
 
     private void PlayerInput()
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-        //µ¥´¿µÄ×ø±êÒÆ¶¯£¬Ã»ÓÐËÙ¶È
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ù¶ï¿½
         rb.MovePosition(rb.position + movementInput * speed * Time.deltaTime);
     }
     private void OnMoveToPosition(Vector3 targetPosition)

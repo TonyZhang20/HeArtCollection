@@ -30,6 +30,9 @@ public class Item : MonoBehaviour
             Debug.Log("背包" + gameObject.name + "物品序号错误 ，储存库中并未有该物品，请添加或者检查ID");
             return;
         }
+
+        if(spriteRenderer == null) return;
+        
         spriteRenderer.sprite = itemDetails.itemOnWorldSprite != null ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
 
         //修改collider尺寸

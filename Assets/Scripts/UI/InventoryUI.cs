@@ -6,6 +6,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
+    public ItemTip itemTip;
     [SerializeField] private SlotUI[] playerSlots;
 
     private void OnEnable()
@@ -25,8 +26,6 @@ public class InventoryUI : MonoBehaviour
         {
             playerSlots[i].slotIndex = i;
         }
-
-
     }
 
     // Update is called once per frame

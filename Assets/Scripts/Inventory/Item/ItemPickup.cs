@@ -24,13 +24,20 @@ public class ItemPickup : MonoBehaviour
         image = pickCanvas.transform.Find("PressE");
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && other.GetComponent<Item>() == null)
         {
             image.gameObject.SetActive(true);
             pickCanvas.GetComponent<RectTransform>().position = new Vector3(transform.position.x, transform.position.y + Settings.pickupCanvasYvalue, transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("Player") && other.GetComponent<Item>() != null)
+        {
+            if (other.gameObject.GetComponent<DialogueController>().canTalk)
+            {
+                image.gameObject.SetActive(other.gameObject.GetComponent<DialogueController>().canTalk);
+                pickCanvas.GetComponent<RectTransform>().position = new Vector3(transform.position.x, transform.position.y + Settings.pickupCanvasYvalue, transform.position.z);
+            }
         }
     }
 
@@ -38,8 +45,8 @@ public class ItemPickup : MonoBehaviour
     {
         Item item = other.GetComponent<Item>();
 
-        //说明这是一个可以被捡起来的物品
-        if (item != null)
+        //濡傛灉杩欐槸涓�涓彲浠ヨ鎹¤捣鏉ョ殑鐗╀綋
+        if (item != null && other.CompareTag("Player"))
         {
             if (item.itemDetails.canPickup && Input.GetKeyDown(KeyCode.E))
             {
