@@ -14,10 +14,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
 
     public bool inputDisable;
+    private bool isMoving = false;
+    private Animator anim;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -38,17 +41,22 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(inputDisable == false)
-        {
             PlayerInput();
-        }
+
+        SetAnimation();
+
     }
 
     void FixedUpdate()
     {
         if(inputDisable == false)
-        {
             Movement();
-        }
+    }
+
+    private void SetAnimation()
+    {
+        anim.SetFloat("InputX",inputX);
+        anim.SetFloat("InputY",inputY);
     }
 
     private void PlayerInput()
@@ -62,12 +70,20 @@ public class PlayerController : MonoBehaviour
             inputY *= 0.7f;
         }
 
+        if(!Mathf.Approximately(0, inputX) || !Mathf.Approximately(0, inputY))
+        {
+            isMoving = true;
+        }
+        else if(Mathf.Approximately(0, inputX) && Mathf.Approximately(0, inputY))
+        {
+            isMoving = false;
+        }
+
         movementInput = new Vector2(inputX, inputY);
     }
 
     private void Movement()
     {
-        //�����������ƶ���û���ٶ�
         rb.MovePosition(rb.position + movementInput * speed * Time.deltaTime);
     }
     private void OnMoveToPosition(Vector3 targetPosition)
