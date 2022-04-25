@@ -157,6 +157,16 @@ public class SisterFollow : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StopAnimation();
+            Player = null;
+            isChasing = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //进入范围后暂停跟随

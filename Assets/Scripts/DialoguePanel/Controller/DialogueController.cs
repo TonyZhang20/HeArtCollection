@@ -37,7 +37,10 @@ public class DialogueController : MonoBehaviour
         dialogueStack = new Stack<DialoguePiece>();
         for (int i = dialogueList.Count - 1; i > -1; i--)
         {
-            dialogueList[i].isDone = false;
+            if(dialogueList[i].canRepeat)
+            {
+                dialogueList[i].isDone = false;
+            }
             dialogueStack.Push(dialogueList[i]);
         }
     }
@@ -47,14 +50,13 @@ public class DialogueController : MonoBehaviour
         if(canTalk && Input.GetKeyDown(KeyCode.E) && !isTalking)
         {
             StartCoroutine(DialogueRoutine());
-            
         }
     }
 
     private IEnumerator DialogueRoutine()
     {
         isTalking = true;
-        if(dialogueStack.TryPop(out DialoguePiece result))
+        if(dialogueStack.TryPop(out DialoguePiece result) && !result.isDone)
         {
             EventHandler.CallShowDialogueEvent(result);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;

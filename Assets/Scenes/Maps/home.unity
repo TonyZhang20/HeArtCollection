@@ -576,7 +576,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.018804073, y: -0.023266554}
@@ -613,6 +613,7 @@ MonoBehaviour:
     Name: "\u5976\u5976"
     dialogueText: "\u6211\u662F\u4F60\u5976\u5976"
     isDone: 0
+    canRepeat: 1
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -621,6 +622,7 @@ MonoBehaviour:
     Name: "\u54E5\u54E5"
     dialogueText: "\u6211\u662F\u4F60\u5B59\u5B50"
     isDone: 0
+    canRepeat: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -1925,7 +1927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538072489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.48, y: -4.01, z: 0.0021813}
+  m_LocalPosition: {x: 3.489, y: -2.937, z: 0.0021813}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2367,7 +2369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709221390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.89, y: 5.67, z: 0.0021813}
+  m_LocalPosition: {x: 1.68, y: 5.84, z: 0.0021813}
   m_LocalScale: {x: 3.9924111, y: 3.871395, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2415,12 +2417,12 @@ SpriteRenderer:
   m_SortingLayerID: 332934597
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c47a419784003fc40a568b37d8d9f098, type: 3}
+  m_Sprite: {fileID: -796970672, guid: c47a419784003fc40a568b37d8d9f098, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.43, y: 2.32}
+  m_Size: {x: 1.98, y: 2.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

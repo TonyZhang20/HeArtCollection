@@ -12,7 +12,7 @@ public class DialoguePiece
     public string Name;
     [TextArea]
     public string dialogueText;
-    [HideInInspector]
     public bool isDone;
+    public bool canRepeat = true;
     public UnityEvent AfterConversation;
 }
