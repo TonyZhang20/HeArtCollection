@@ -3,24 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - SceneWall
-  - PickupCanvas
-  - Item
-  - Building
-<<<<<<< Updated upstream
-=======
-  - Shop
-  - Canteen
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - NPC
+  - 
   - 
   - 
   - 
@@ -49,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ground
-    uniqueID: 3807839841
-    locked: 0
-  - name: Instance
-    uniqueID: 1989231131
-    locked: 0
-  - name: Collision
-    uniqueID: 1632743797
     locked: 0

@@ -6,10 +6,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
     public ItemTip itemTip;
->>>>>>> Stashed changes
     [SerializeField] private SlotUI[] playerSlots;
 
     private void OnEnable()
@@ -29,11 +26,6 @@ public class InventoryUI : MonoBehaviour
         {
             playerSlots[i].slotIndex = i;
         }
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     }
 
     // Update is called once per frame
