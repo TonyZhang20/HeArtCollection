@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &31756374
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +248,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4384019309812679299, guid: 06f64bfb6476d2a4785081b35a49d2ef, type: 3}
   m_PrefabInstance: {fileID: 4384019309819506336}
   m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!1 &437954749
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,11 +324,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-<<<<<<< Updated upstream
-    m_SensorSize: {x: 1.7777778, y: 1}
-=======
     m_SensorSize: {x: 1.7790927, y: 1}
->>>>>>> Stashed changes
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -348,21 +341,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437954749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: -5.22, y: -1.85, z: -10}
-=======
   m_LocalPosition: {x: -3.99, y: -3.66, z: -10}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1447442006}
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 1
-=======
   m_RootOrder: 2
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &437954754
 MonoBehaviour:
@@ -376,8 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852a5faa8beeb7041b90defdc2a6374f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-=======
 --- !u!114 &518905045 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4384019309728592501, guid: 06f64bfb6476d2a4785081b35a49d2ef, type: 3}
@@ -389,7 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &698309466
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,21 +460,6 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698309466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.01607717, y: 0.01607717, z: 0.01607717}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 1968552747}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.605, y: 3.765}
-  m_SizeDelta: {x: 1106, y: 622}
-  m_Pivot: {x: 0.5, y: 0.5}
-=======
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -683,7 +650,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
->>>>>>> Stashed changes
 --- !u!1001 &955048196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,8 +657,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 1862995009656935207, guid: d33d5e5e92a3a9f45a1be3debc8a0385, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -717,7 +681,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 1862995010653504165, guid: d33d5e5e92a3a9f45a1be3debc8a0385, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -728,11 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862995010653504165, guid: d33d5e5e92a3a9f45a1be3debc8a0385, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
-      value: 3
-=======
       value: 5
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1862995010653504165, guid: d33d5e5e92a3a9f45a1be3debc8a0385, type: 3}
       propertyPath: m_AnchorMax.x
@@ -812,8 +771,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d33d5e5e92a3a9f45a1be3debc8a0385, type: 3}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1000767348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6136756312785946225, guid: a6cf209295d67dc4fbc48a043a91eab6, type: 3}
@@ -964,7 +921,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes
 --- !u!1 &1271754914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,11 +964,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 4
-=======
   m_RootOrder: 0
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1447442005
 GameObject:
@@ -1024,11 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447442006}
   - component: {fileID: 1447442008}
-<<<<<<< Updated upstream
-  - component: {fileID: 1447442007}
-=======
   - component: {fileID: 1447442009}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1051,11 +999,7 @@ Transform:
   m_Father: {fileID: 437954753}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!114 &1447442007
-=======
 --- !u!114 &1447442008
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1064,48 +1008,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447442005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
-  m_LookaheadIgnoreY: 0
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
-  m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
-  m_DeadZoneDepth: 0
-  m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
-  m_BiasX: 0
-  m_BiasY: 0
-  m_CenterOnActivate: 1
-  m_GroupFramingMode: 2
-  m_AdjustmentMode: 0
-  m_GroupFramingSize: 0.8
-  m_MaxDollyIn: 5000
-  m_MaxDollyOut: 5000
-  m_MinimumDistance: 1
-  m_MaximumDistance: 5000
-  m_MinimumFOV: 3
-  m_MaximumFOV: 60
-  m_MinimumOrthoSize: 1
-  m_MaximumOrthoSize: 5000
---- !u!114 &1447442008
-=======
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1447442009
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1114,11 +1020,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447442005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1132,7 +1033,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
->>>>>>> Stashed changes
 --- !u!1001 &1578689983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1144,23 +1044,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-    - target: {fileID: 434107090810360936, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.85
-=======
     - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1172,7 +1055,6 @@ PrefabInstance:
     - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.66
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1206,13 +1088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 8482426115133249505, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 11400000, guid: 30d0ba010f0de0c49b76117110bc0787, type: 2}
->>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
 --- !u!4 &1578689984 stripped
@@ -1220,8 +1099,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 434107090810361749, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
   m_PrefabInstance: {fileID: 1578689983}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1793580780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1175,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793580780}
   m_CullTransparentMesh: 1
->>>>>>> Stashed changes
 --- !u!1 &1968552746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,11 +1203,7 @@ RectTransform:
   m_GameObject: {fileID: 1968552746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
-=======
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
->>>>>>> Stashed changes
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 698309470}
@@ -1478,20 +1350,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022339167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: -5.22, y: -1.85, z: -10}
-=======
   m_LocalPosition: {x: -3.99, y: -3.66, z: -10}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< Updated upstream
-  m_RootOrder: 0
-=======
   m_RootOrder: 1
->>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2022339171
 MonoBehaviour:
@@ -1527,8 +1391,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< Updated upstream
-=======
 --- !u!1 &2070299929 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 434107090810360936, guid: 007c8a0f04087c24690a24af4f31edb3, type: 3}
@@ -1772,4 +1634,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6cf209295d67dc4fbc48a043a91eab6, type: 3}
->>>>>>> Stashed changes
