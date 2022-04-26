@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : SingleTon<InventoryManager>
 {
@@ -10,12 +10,23 @@ public class InventoryManager : SingleTon<InventoryManager>
 
     [Header("背包数据")]
     public InventoryBag_SO playerBag;
+    private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
 
-    private void Start() 
+    private void OnEnable() 
+    {
+        EventHandler.AfterSceneLoadEvent += UpdateUI;
+    }
+
+    private void OnDisable() 
+    {
+        EventHandler.AfterSceneLoadEvent -= UpdateUI;
+    }
+
+    public void UpdateUI()
     {
         EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
     }
-
+    
     public ItemDetails GetItemDetails(int ID)
     {
         return itemDataList_SO.itemDetails.Find(i => i.itemID == ID);
@@ -89,4 +100,5 @@ public class InventoryManager : SingleTon<InventoryManager>
             playerBag.itemList[index] = item;
         }
     }
+
 }
