@@ -5,10 +5,9 @@ using UnityEngine;
 public class GrandmaGiveCookie : MonoBehaviour
 {
 
+    public Item item;
     public void GiveCookie()
     {
-        var item = GetComponent<Item>();
-        
         if(item != null)
         {
             InventoryManager.Instance.AddItem(item);

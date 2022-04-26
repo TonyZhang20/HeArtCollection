@@ -4110,7 +4110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToGo: Town
-  positionToGo: {x: -6, y: -3, z: 0}
+  positionToGo: {x: -11, y: -8, z: 0}
 --- !u!61 &1859611377
 BoxCollider2D:
   m_ObjectHideFlags: 0
