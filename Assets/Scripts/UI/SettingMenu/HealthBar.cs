@@ -10,13 +10,13 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
     public Sprite heartIcon;
     public TextMeshProUGUI moneyText;
     public Image[] heart;
-    private PlayerStats_SO playerStats;
+    private PlayerStats playerStats;
     private Animator anim;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        playerStats = player.GetComponent<PlayerStats>().playerStats;
+        playerStats = player.GetComponent<PlayerStats>();
         RefershHealthBar();
         RefershCoin();
     }
@@ -35,7 +35,7 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
     {
         for (int i = 0; i < 4; i++)
         {
-            if (i < playerStats.health)
+            if (i < playerStats.currentHealth)
             {
                 heart[i].gameObject.SetActive(true);
                 heart[i].sprite = heartIcon;

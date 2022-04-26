@@ -76,9 +76,4 @@ public class DialogueController : MonoBehaviour
             OnFinishEvent?.Invoke();
         }
     }
-
-    public void EventTest()
-    {
-        Debug.Log("Go");
-    }
 }

@@ -611,7 +611,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0036223829, y: -0.4089566}
+  m_Offset: {x: -0.0036223829, y: -0.51439494}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -622,7 +622,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5145727, y: 0.23829839}
+  m_Size: {x: 0.5145727, y: 0.20194039}
   m_EdgeRadius: 0
 --- !u!212 &220221294
 SpriteRenderer:
@@ -721,7 +721,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12250519, y: 5.030504}
+  m_Offset: {x: 0.1752677, y: 5.030504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -732,7 +732,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5270405, y: 4.992135}
+  m_Size: {x: 6.6325655, y: 4.992135}
   m_EdgeRadius: 0
 --- !u!1 &280677384
 GameObject:
@@ -3155,6 +3155,7 @@ MonoBehaviour:
     dialogueText: "\u770B\u8FD9\u91CC\u6709\u7F8A"
     isDone: 0
     canRepeat: 1
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -3164,6 +3165,7 @@ MonoBehaviour:
     dialogueText: "\u54C7\u54E6"
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -3692,7 +3694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701920600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.63, y: 2.3, z: 0.090933256}
+  m_LocalPosition: {x: -4.612, y: 2.3, z: 0.090933256}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []

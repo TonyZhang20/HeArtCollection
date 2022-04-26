@@ -35,7 +35,8 @@ public class InventoryManager : SingleTon<InventoryManager>
 
         if (toDestory)
         {
-            Destroy(item.gameObject);
+            if(!item.gameObject.CompareTag("NPC"))
+                Destroy(item.gameObject);
         }
 
         //Update UI

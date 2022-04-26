@@ -11,7 +11,10 @@ public class DialogueUI : MonoBehaviour
     public Text dialogueText;
     public Image faceRight, faceLeft;
     public TextMeshProUGUI nameRight, nameLeft;
-
+    public TextMeshProUGUI GetItemText;
+    public GameObject GetItemPanel;
+    private float closePanel = 0;
+    
     private void Awake()
     {
 
@@ -25,6 +28,15 @@ public class DialogueUI : MonoBehaviour
     private void OnDisable()
     {
         EventHandler.ShowDialogueEvent -= OnShowDialogueEvent;
+    }
+
+    private void Update() 
+    {
+        closePanel -= Time.deltaTime;
+        if(closePanel < 0)
+        {
+            GetItemPanel.SetActive(false);
+        }
     }
 
     private void OnShowDialogueEvent(DialoguePiece dialoguePiece)
@@ -73,6 +85,13 @@ public class DialogueUI : MonoBehaviour
             dialogueBox.SetActive(false);
             yield break;
         }
+    }
+
+    public void ShowPanel(string describe)
+    {
+        GetItemPanel.SetActive(true);
+        closePanel = 1.5f;
+        GetItemText.text = describe;
     }
 
 }

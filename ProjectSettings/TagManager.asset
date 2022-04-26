@@ -9,6 +9,8 @@ TagManager:
   - SceneWall
   - Building
   - PlayerBag
+  - DialoageCanvas
+  - NPC
   layers:
   - Default
   - TransparentFX
