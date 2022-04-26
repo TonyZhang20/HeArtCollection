@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Useable, Healable, Weapon
+    Useable, Clue, Weapon
 }
 
 public enum SlotType{ Bag, Shop }

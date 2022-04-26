@@ -38,6 +38,7 @@ public class OpenShop : MonoBehaviour
 
     private void Update()
     {
+        //Open and Close Shop Canvas
         if (canShopping)
         {
             if (Input.GetKeyDown(KeyCode.E))

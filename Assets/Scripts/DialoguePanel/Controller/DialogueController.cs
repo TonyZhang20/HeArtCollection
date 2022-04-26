@@ -62,6 +62,10 @@ public class DialogueController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;
             yield return new WaitUntil(() => result.isDone);
             isTalking = false;
+            if(result.hasEvent)
+            {
+                result.AfterConversation?.Invoke();
+            }
         }
         else
         {
@@ -71,5 +75,10 @@ public class DialogueController : MonoBehaviour
             isTalking = false;
             OnFinishEvent?.Invoke();
         }
+    }
+
+    public void EventTest()
+    {
+        Debug.Log("Go");
     }
 }

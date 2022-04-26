@@ -607,7 +607,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278399824}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: EventTest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 98ee9a78102e4f34cb390d94d050a5d3, type: 3}
     onLeft: 1
@@ -615,6 +627,7 @@ MonoBehaviour:
     dialogueText: "\u5C0F\u5B9D\u4EEC\u7EC8\u4E8E\u56DE\u6765\u5566\uFF0C\u54CE\u5440\u5440\u957F\u9AD8\u4E86\u4E0D\u5C11\u554A\uFF0C\u5FEB\u6765\u5FEB\u6765\uFF0C\u5976\u5976\u70E4\u4E86\u997C\u5E72\u3002"
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -624,15 +637,29 @@ MonoBehaviour:
     dialogueText: "\u54E5\u54E5\uFF0C\u59B9\u59B9 \u597D\u8036\uFF01\u5976\u5976\u70E4\u7684\u997C\u5E72\u6700\u597D\u5403\u4E86\uFF01"
     isDone: 0
     canRepeat: 0
+    hasEvent: 1
     AfterConversation:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 278399824}
+          m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+          m_MethodName: EventTest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - faceImage: {fileID: 21300000, guid: 6606104af19b32e4c87fbfff314f7033, type: 3}
     onLeft: 0
     Name: "\u54E5\u54E5"
     dialogueText: "\u597D\u4E45\u6CA1\u6709\u56DE\u5230\u8FD9\u91CC\u4E86\uFF0C\u771F\u662F\u6000\u5FF5\u554A\u3002"
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -642,6 +669,7 @@ MonoBehaviour:
     dialogueText: "\u662F\u554A\uFF0C\u6211\u8FD8\u8BB0\u5F97\u6709\u4E00\u6B21\uFF0C\u54E5\u54E5\u548C\u5C0F\u72D7\u8FFD\u7740\u6EE1\u9662\u5B50\u4E71\u722C\uFF0C\u4E00\u5C41\u80A1\u6454\u5012\u4E86\u72D7\u5C4E\u4E0A\uFF0C\u771F\u7684\u597D\u6000\u5FF5\u554A\u3002"
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -651,6 +679,7 @@ MonoBehaviour:
     dialogueText: "\u8FD9\u662F\u53EF\u4EE5\u8BF4\u7684\u5417"
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -660,6 +689,7 @@ MonoBehaviour:
     dialogueText: ......
     isDone: 0
     canRepeat: 0
+    hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
@@ -2036,77 +2066,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!1 &1553747588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1553747589}
-  - component: {fileID: 1553747591}
-  - component: {fileID: 1553747590}
-  m_Layer: 0
-  m_Name: GrandMon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1553747589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553747588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.91, y: -0.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1628743929}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1553747590
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553747588}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.69158995, y: -0.20867509}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.0936468, y: 2.6192765}
-  m_EdgeRadius: 0
---- !u!114 &1553747591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553747588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b417942ce9191459825dfa39cc7392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1599351300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,8 +2204,7 @@ Transform:
   m_LocalPosition: {x: -3.063208, y: 1.2716804, z: -0.053461567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1553747589}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

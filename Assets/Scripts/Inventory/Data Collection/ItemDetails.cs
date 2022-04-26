@@ -13,7 +13,7 @@ public class ItemDetails
     [TextArea]
     public string itemDescription;
     public bool canPickup = true;
-    public bool canDrop;
+    public bool canDrop = false;
     public int itemPrice;
 
 }

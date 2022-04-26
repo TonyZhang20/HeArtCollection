@@ -14,5 +14,6 @@ public class DialoguePiece
     public string dialogueText;
     public bool isDone;
     public bool canRepeat = true;
+    public bool hasEvent = false;
     public UnityEvent AfterConversation;
 }
