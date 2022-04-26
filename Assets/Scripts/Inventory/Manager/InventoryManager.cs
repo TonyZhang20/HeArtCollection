@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : SingleTon<InventoryManager>
 {
@@ -10,10 +10,26 @@ public class InventoryManager : SingleTon<InventoryManager>
 
     [Header("背包数据")]
     public InventoryBag_SO playerBag;
+    private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
 
     private void Start() 
     {
         EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+    }
+
+    private void OnEnable() 
+    {
+        EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
+    }
+
+    private void OnDisable() 
+    {
+        EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
+    }
+    
+    private void OnBeforeSceneUnloadEvent()
+    {
+        GetAllSceneItems();
     }
 
     public ItemDetails GetItemDetails(int ID)
@@ -88,5 +104,30 @@ public class InventoryManager : SingleTon<InventoryManager>
             var item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
             playerBag.itemList[index] = item;
         }
+    }
+
+    private void GetAllSceneItems()
+    {
+        List<SceneItem> currentSceneItems = new List<SceneItem>();
+
+        foreach (var item in FindObjectsOfType<Item>())
+        {
+            SceneItem sceneItem = new SceneItem{ itemID = item.itemID, position = new SerializableVector3(item.transform.position)};
+            currentSceneItems.Add(sceneItem);
+        }
+
+        if(sceneItemDict.ContainsKey(SceneManager.GetActiveScene().name))
+        {
+            sceneItemDict[SceneManager.GetActiveScene().name] = currentSceneItems;
+        }
+        else
+        {
+            sceneItemDict.Add(SceneManager.GetActiveScene().name, currentSceneItems);
+        }
+    }
+
+    private void GetAllSceneTriggers()
+    {
+
     }
 }
