@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2208220736811625245}
   - component: {fileID: 1000767353}
   - component: {fileID: 1000767352}
-  - component: {fileID: 7161180492785210348}
   - component: {fileID: 4515513211829782334}
   m_Layer: 0
   m_Name: Sister
@@ -138,22 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.05
---- !u!58 &7161180492785210348
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6136756312785946225}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3608544}
-  serializedVersion: 2
-  m_Radius: 0.7361951
 --- !u!114 &4515513211829782334
 MonoBehaviour:
   m_ObjectHideFlags: 0

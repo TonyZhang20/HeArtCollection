@@ -12,26 +12,21 @@ public class InventoryManager : SingleTon<InventoryManager>
     public InventoryBag_SO playerBag;
     private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
 
-    private void Start() 
-    {
-        EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
-    }
-
     private void OnEnable() 
     {
-        EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
+        EventHandler.AfterSceneLoadEvent += UpdateUI;
     }
 
     private void OnDisable() 
     {
-        EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
-    }
-    
-    private void OnBeforeSceneUnloadEvent()
-    {
-        GetAllSceneItems();
+        EventHandler.AfterSceneLoadEvent -= UpdateUI;
     }
 
+    public void UpdateUI()
+    {
+        EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+    }
+    
     public ItemDetails GetItemDetails(int ID)
     {
         return itemDataList_SO.itemDetails.Find(i => i.itemID == ID);
@@ -106,28 +101,4 @@ public class InventoryManager : SingleTon<InventoryManager>
         }
     }
 
-    private void GetAllSceneItems()
-    {
-        List<SceneItem> currentSceneItems = new List<SceneItem>();
-
-        foreach (var item in FindObjectsOfType<Item>())
-        {
-            SceneItem sceneItem = new SceneItem{ itemID = item.itemID, position = new SerializableVector3(item.transform.position)};
-            currentSceneItems.Add(sceneItem);
-        }
-
-        if(sceneItemDict.ContainsKey(SceneManager.GetActiveScene().name))
-        {
-            sceneItemDict[SceneManager.GetActiveScene().name] = currentSceneItems;
-        }
-        else
-        {
-            sceneItemDict.Add(SceneManager.GetActiveScene().name, currentSceneItems);
-        }
-    }
-
-    private void GetAllSceneTriggers()
-    {
-
-    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISaveable
 {
     private Rigidbody2D rb;
 
@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
 
     public bool inputDisable;
     private Animator anim;
+
+    private void Start() 
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveable();    
+    }
 
     void Awake()
     {
@@ -89,5 +95,19 @@ public class PlayerController : MonoBehaviour
     private void OnBeforeSceneUnloadEvent()
     {
         inputDisable = true;
+    }
+
+    public GameSaveData GenerateSaveData()
+    {
+        GameSaveData saveData = new GameSaveData();
+        saveData.characterPosDict = new Dictionary<string, SerializableVector3>();
+        saveData.characterPosDict.Add(this.name, new SerializableVector3(transform.position));
+
+        return saveData;
+    }
+
+    public void RestoreData(GameSaveData saveData)
+    {
+        transform.position = saveData.characterPosDict[this.name].ToVector3();;
     }
 }
