@@ -7,26 +7,29 @@ public class bear : MonoBehaviour
     private Collider2D bearCollider;
     private Animator bearAnim;
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable() {
+        EventHandler.AfterSceneLoadEvent += FindAnimator;
+    }
+
+    private void OnDisable() {
+        EventHandler.AfterSceneLoadEvent -= FindAnimator;
+    }
+
+    private void FindAnimator()
     {
-        bearCollider = GetComponent<Collider2D>();
         bearAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void giveAnim()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            bearAnim.SetBool("int", true);
-        }
+        Debug.Log("Run");
+        bearAnim.SetBool("give", true);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void stopAnim()
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            bearAnim.SetBool("int", false);
-        }
+        Debug.Log("Run");
+        bearAnim.SetBool("give", false);
     }
 }
