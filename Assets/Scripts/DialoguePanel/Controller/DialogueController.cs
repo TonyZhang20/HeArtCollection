@@ -8,7 +8,7 @@ public class DialogueController : MonoBehaviour
     public UnityEvent OnFinishEvent;
     public List<DialoguePiece> dialogueList = new List<DialoguePiece>();
     public Stack<DialoguePiece> dialogueStack;
-    public  bool canTalk;
+    public  bool canTalk = true;
     private bool isTalking = false;
 
     private void Awake()
