@@ -331,7 +331,7 @@ MonoBehaviour:
     Name: "\u718A\u718A\u5C0F\u4E11"
     dialogueText: "\u8BF7\u7559\u6B65\uFF01\u5947\u5E7B\u6E38\u4E50\u56ED\u7B49\u4F60\u6765\u53C2\u89C2\uFF01"
     isDone: 0
-    canRepeat: 0
+    canRepeat: 1
     hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
@@ -341,12 +341,12 @@ MonoBehaviour:
     Name: "\u54E5\u54E5"
     dialogueText: "\u597D\u5947\u602A\u7684\u4EBA"
     isDone: 0
-    canRepeat: 0
+    canRepeat: 1
     hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
-  canTalk: 0
+  canTalk: 1
 --- !u!61 &128501306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -869,12 +869,12 @@ MonoBehaviour:
     Name: "\u6BCF\u4E00\u5E74"
     dialogueText: "\u9700\u8981\u53BB\u7684\u4E0D\u662F\u8FD9\u5BB6"
     isDone: 0
-    canRepeat: 0
+    canRepeat: 1
     hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
-  canTalk: 0
+  canTalk: 1
 --- !u!114 &475206437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,12 +2374,12 @@ MonoBehaviour:
     Name: "\u4E94\u91D1\u5E97"
     dialogueText: "\u9700\u8981\u53BB\u7684\u4E0D\u662F\u8FD9\u5BB6"
     isDone: 0
-    canRepeat: 0
+    canRepeat: 1
     hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
-  canTalk: 0
+  canTalk: 1
 --- !u!1 &1912219345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,12 +2461,12 @@ MonoBehaviour:
     Name: "\u6C34\u679C\u8F66"
     dialogueText: "\u611F\u89C9\u897F\u74DC\u5728\u8BF4\uFF1A\u4F60\u6545\u610F\u627E\u832C\u662F\u4E0D\u662F"
     isDone: 0
-    canRepeat: 0
+    canRepeat: 1
     hasEvent: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
-  canTalk: 0
+  canTalk: 1
 --- !u!114 &1912219349
 MonoBehaviour:
   m_ObjectHideFlags: 0
