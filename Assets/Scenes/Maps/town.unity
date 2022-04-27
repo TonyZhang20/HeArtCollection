@@ -726,7 +726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397990631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.26, y: -0.8, z: 0.07530437}
+  m_LocalPosition: {x: 11.26, y: -1.77, z: 0.07530437}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -784,7 +784,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &397990634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -798,10 +798,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7792769}
+  m_Offset: {x: 0, y: -0.27332112}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.508085, y: 0.022835825}
     oldSize: {x: 1.72, y: 1.02}
     newSize: {x: 1.72, y: 1.02}
     adaptiveTilingThreshold: 0.5
@@ -809,7 +809,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.72, y: 0.8716575}
+  m_Size: {x: 1.72, y: 0.62384254}
   m_EdgeRadius: 0
 --- !u!1 &475206433
 GameObject:
@@ -1182,7 +1182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861585294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.77, y: -0.8, z: 0.07530437}
+  m_LocalPosition: {x: 4.76, y: -1.91, z: 0.07530437}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1202,10 +1202,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00976181, y: -0.6627063}
+  m_Offset: {x: -0.00976181, y: -0.16999626}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4999998, y: -0.037870012}
     oldSize: {x: 2.9, y: 1.06}
     newSize: {x: 2.9, y: 1.06}
     adaptiveTilingThreshold: 0.5
@@ -1213,7 +1213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8804765, y: 0.6527053}
+  m_Size: {x: 2.8804765, y: 0.49101925}
   m_EdgeRadius: 0
 --- !u!212 &861585297
 SpriteRenderer:
@@ -1266,7 +1266,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &893776532
 GameObject:
   m_ObjectHideFlags: 0
