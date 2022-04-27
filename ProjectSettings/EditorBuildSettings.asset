@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start_UI.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Maps/Town.unity
+    path: Assets/Scenes/Maps/town.unity
     guid: 2c0efb89e0eac594b9a217add2148c55
+  - enabled: 1
+    path: Assets/Scenes/Maps/d-town.unity
+    guid: 29e5811f3f1b3b946bad9d3635bb17eb
   m_configObjects: {}

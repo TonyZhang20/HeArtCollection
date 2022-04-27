@@ -262,8 +262,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332934597
-  m_SortingLayer: 1
+  m_SortingLayerID: -2055093231
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 175218733, guid: 5fb1e5636bcc0954796e4b45db7afd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 128501305}
   m_Layer: 0
   m_Name: bear
-  m_TagString: Untagged
+  m_TagString: DialoageCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,8 +456,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332934597
-  m_SortingLayer: 1
+  m_SortingLayerID: -2055093231
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1269762323, guid: 5fb1e5636bcc0954796e4b45db7afd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -644,39 +644,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.962017, y: 0.08127594}
   m_EdgeRadius: 0
---- !u!1 &382590828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 382590829}
-  m_Layer: 0
-  m_Name: event
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &382590829
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382590828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2138059043}
-  - {fileID: 893776533}
-  m_Father: {fileID: 688078444}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397990631
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,8 +715,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332934597
-  m_SortingLayer: 1
+  m_SortingLayerID: -2055093231
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 2109586135, guid: 5fb1e5636bcc0954796e4b45db7afd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -802,7 +769,7 @@ GameObject:
   - component: {fileID: 475206436}
   m_Layer: 0
   m_Name: every year
-  m_TagString: Untagged
+  m_TagString: DialoageCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1070,7 +1037,6 @@ Transform:
   m_Children:
   - {fileID: 559577546}
   - {fileID: 36733371}
-  - {fileID: 382590829}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1229,8 +1195,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332934597
-  m_SortingLayer: 1
+  m_SortingLayerID: -2055093231
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 398435362, guid: 5fb1e5636bcc0954796e4b45db7afd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1243,37 +1209,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &893776532
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 893776533}
-  m_Layer: 0
-  m_Name: roadR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &893776533
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893776532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 382590829}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916391339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2229,7 @@ GameObject:
   - component: {fileID: 1874077227}
   m_Layer: 0
   m_Name: hardware store
-  m_TagString: Untagged
+  m_TagString: DialoageCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2394,7 +2329,7 @@ GameObject:
   - component: {fileID: 1912219348}
   m_Layer: 0
   m_Name: car
-  m_TagString: Untagged
+  m_TagString: DialoageCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2479,7 +2414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da6321219a6745b794123a7d4fec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePosition: {x: 0, y: 0, z: 0}
+  movePosition: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1926157029
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,8 +2863,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 332934597
-  m_SortingLayer: 1
+  m_SortingLayerID: -2055093231
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 168720616, guid: 5fb1e5636bcc0954796e4b45db7afd4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2942,34 +2877,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2138059042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2138059043}
-  m_Layer: 0
-  m_Name: roadL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2138059043
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138059042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 382590829}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
