@@ -12,6 +12,7 @@ TagManager:
   - DialoageCanvas
   - NPC
   - Items
+  - Dialoage
   layers:
   - Default
   - TransparentFX
