@@ -3100,7 +3100,7 @@ GameObject:
   - component: {fileID: 1530040335}
   m_Layer: 0
   m_Name: "\u770B\u7F8A"
-  m_TagString: Untagged
+  m_TagString: Dialoage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
