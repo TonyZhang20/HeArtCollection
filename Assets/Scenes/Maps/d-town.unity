@@ -175,7 +175,7 @@ MonoBehaviour:
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 745448ca9235527448e648ffa99fd688, type: 3}
     onLeft: 0
-    Name: ??
+    Name: '?'
     dialogueText: "\u6FC2\u30E5\u53CD\u5A06\u0444\u6E47\u9357\u6C31\u57CD\u9470\u5C7D\u82DF\u95C8\u70B6\u59AD\u935D\uFFFD\u6924\u8F70\u7A76\u9359\u621E\u5ABA"
     isDone: 0
     canRepeat: 1
@@ -441,7 +441,7 @@ MonoBehaviour:
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 745448ca9235527448e648ffa99fd688, type: 3}
     onLeft: 0
-    Name: ??
+    Name: '?'
     dialogueText: "\u6FC2\u30E5\u53CD\u5A06\u0444\u6E47\u9357\u6C31\u57CD\u9470\u5C7D\u82DF\u95C8\u70B6\u59AD\u935D\uFFFD\u6924\u8F70\u7A76\u9359\u621E\u5ABA"
     isDone: 0
     canRepeat: 1
@@ -1658,7 +1658,7 @@ MonoBehaviour:
         m_Calls: []
   - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
     onLeft: 0
-    Name: intscene
+    Name: "\u54E5\u54E5"
     dialogueText: "\u6CA1\u4E8B\uFF0C\u6709\u54E5\u54E5\u5728\u5462\uFF01\u6211\u4EEC\u5148\u56DB\u5904\u770B\u770B\u5427\u3002"
     isDone: 0
     canRepeat: 1
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 745448ca9235527448e648ffa99fd688, type: 3}
     onLeft: 0
-    Name: ??
+    Name: '?'
     dialogueText: "\u6FC2\u30E5\u53CD\u5A06\u0444\u6E47\u9357\u6C31\u57CD\u9470\u5C7D\u82DF\u95C8\u70B6\u59AD\u935D\uFFFD\u6924\u8F70\u7A76\u9359\u621E\u5ABA"
     isDone: 0
     canRepeat: 1
@@ -3380,7 +3380,7 @@ MonoBehaviour:
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 745448ca9235527448e648ffa99fd688, type: 3}
     onLeft: 0
-    Name: ??
+    Name: '?'
     dialogueText: "\u6FC2\u30E5\u53CD\u5A06\u0444\u6E47\u9357\u6C31\u57CD\u9470\u5C7D\u82DF\u95C8\u70B6\u59AD\u935D\uFFFD\u6924\u8F70\u7A76\u9359\u621E\u5ABA"
     isDone: 0
     canRepeat: 1
