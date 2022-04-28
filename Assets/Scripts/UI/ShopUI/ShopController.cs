@@ -65,7 +65,7 @@ public class ShopController : MonoBehaviour
     {
         var PlayerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 
-        Debug.Log(item.itemDetails.itemID);
+        //Debug.Log(item.itemDetails.itemID);
 
         if (PlayerMoney.Money >= item.itemDetails.itemPrice && item.itemDetails.canPickup)
         {

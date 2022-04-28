@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
     public Stack<DialoguePiece> dialogueStack;
     public  bool canTalk = true;
     private bool isTalking = false;
+    public bool isTrigger = false;
 
     private void Awake()
     {
@@ -26,9 +27,9 @@ public class DialogueController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isTrigger)
         {
-            canTalk = false;
+            StartCoroutine(DialogueRoutine());
         }
     }
 
@@ -47,7 +48,7 @@ public class DialogueController : MonoBehaviour
 
     private void Update() 
     {
-        if(canTalk && Input.GetKeyDown(KeyCode.E) && !isTalking)
+        if(canTalk && Input.GetKeyDown(KeyCode.E) && !isTalking && !isTrigger)
         {
             StartCoroutine(DialogueRoutine());
         }
@@ -55,6 +56,7 @@ public class DialogueController : MonoBehaviour
 
     private IEnumerator DialogueRoutine()
     {
+        isTrigger = false;
         isTalking = true;
         if(dialogueStack.TryPop(out DialoguePiece result) && !result.isDone)
         {
@@ -75,5 +77,10 @@ public class DialogueController : MonoBehaviour
             isTalking = false;
             OnFinishEvent?.Invoke();
         }
+    }
+
+    public void CanNotTalk_ExitTriggerOnly()
+    {
+        canTalk = false;
     }
 }

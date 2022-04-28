@@ -23,13 +23,11 @@ public class bear : MonoBehaviour
     // Update is called once per frame
     public void giveAnim()
     {
-        Debug.Log("Run");
         bearAnim.SetBool("give", true);
     }
 
     public void stopAnim()
     {
-        Debug.Log("Run");
         bearAnim.SetBool("give", false);
     }
 }
