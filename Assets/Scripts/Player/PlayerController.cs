@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour, ISaveable
+public class PlayerController : MonoBehaviour,ISaveable
 {
     private Rigidbody2D rb;
 
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     public bool inputDisable;
     private Animator anim;
+
+    public string GUID => GetComponent<DataGUID>().guid;
 
     private void Start() 
     {
@@ -100,14 +102,29 @@ public class PlayerController : MonoBehaviour, ISaveable
     public GameSaveData GenerateSaveData()
     {
         GameSaveData saveData = new GameSaveData();
+
         saveData.characterPosDict = new Dictionary<string, SerializableVector3>();
+
         saveData.characterPosDict.Add(this.name, new SerializableVector3(transform.position));
+
+        var playerStats = GetComponent<PlayerStats>();
+
+        saveData.currentHealth = playerStats.currentHealth;
+        saveData.Money = playerStats.Money;
 
         return saveData;
     }
 
     public void RestoreData(GameSaveData saveData)
     {
-        transform.position = saveData.characterPosDict[this.name].ToVector3();;
+        transform.position = saveData.characterPosDict[this.name].ToVector3();
+        var playerStats = GetComponent<PlayerStats>();
+
+        Debug.Log(saveData.Money.ToString());
+
+        playerStats.Money = saveData.Money;
+        playerStats.currentHealth = saveData.currentHealth;
+
+        HealthBar.Instance.RefershCoin();
     }
 }

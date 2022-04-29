@@ -1,6 +1,7 @@
 
 public interface ISaveable
 {
+    string GUID { get; }
     void RegisterSaveable()
     {
         SaveloadManager.Instance.RegisterSaveable(this);

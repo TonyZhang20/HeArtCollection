@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransitionManager : SingleTon<TransitionManager>
+public class TransitionManager : SingleTon<TransitionManager>, ISaveable
 {
     public string startSceneName = string.Empty;
     private CanvasGroup fadeCanvasGroup;
     private bool isFade;
 
-    private void Start()
+    public string GUID => GetComponent<DataGUID>().guid;
+
+    //TODO: StartNewGame
+    protected override void Awake()
     {
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
+    }
+    private void Start()
+    {
         StartCoroutine(loadSceneSetActive(startSceneName));
         fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
+
+        ISaveable saveable = this;
+        saveable.RegisterSaveable();
     }
 
     private void OnEnable()
@@ -22,12 +31,13 @@ public class TransitionManager : SingleTon<TransitionManager>
         EventHandler.AfterSceneLoadEvent += findCanvasGroup;
     }
 
+
     private void OnDisable()
     {
         EventHandler.TransitionEvent -= OnTransitionEvent;
         EventHandler.AfterSceneLoadEvent -= findCanvasGroup;
     }
-    
+
     private void findCanvasGroup()
     {
         fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
@@ -36,7 +46,7 @@ public class TransitionManager : SingleTon<TransitionManager>
     private void OnTransitionEvent(string sceneName, Vector3 targetPosition)
     {
         //Debug.Log(targetPosition);
-        if(!isFade)
+        if (!isFade)
         {
             StartCoroutine(ChangeScene(sceneName, targetPosition));
         }
@@ -84,4 +94,38 @@ public class TransitionManager : SingleTon<TransitionManager>
 
         isFade = false;
     }
+
+    private IEnumerator LoadSaveDataScene(string sceneName)
+    {
+        yield return FadeLoadingPage(1f);
+
+        if (SceneManager.GetActiveScene().name != "PresistentScene")
+        {
+            //LoadGame in the Game
+            EventHandler.CallBeforeSceneLoadEvent();
+            yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        //New Game
+        yield return loadSceneSetActive(sceneName);
+        EventHandler.CallAfterSceneLoadedEvent();
+        yield return FadeLoadingPage(0f);
+
+    }
+
+    public GameSaveData GenerateSaveData()
+    {
+        GameSaveData saveData = new GameSaveData();
+        saveData.dataSceneName = SceneManager.GetActiveScene().name;
+
+        return saveData;
+    }
+
+    public void RestoreData(GameSaveData saveData)
+    {
+        //加载游戏场景
+        StartCoroutine(LoadSaveDataScene(saveData.dataSceneName));
+    }
+
+
 }

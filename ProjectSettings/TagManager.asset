@@ -13,6 +13,8 @@ TagManager:
   - NPC
   - Items
   - Dialoage
+  - ItemParent
+  - DialogueParent
   layers:
   - Default
   - TransparentFX

@@ -69,7 +69,7 @@ public class ShopController : MonoBehaviour
 
         if (PlayerMoney.Money >= item.itemDetails.itemPrice && item.itemDetails.canPickup)
         {
-            Debug.Log(item.itemDetails.itemPrice.ToString() + PlayerMoney.Money);
+            //Debug.Log(item.itemDetails.itemPrice.ToString() + PlayerMoney.Money);
             
             //加入物品到背包，不摧毁UI
             InventoryManager.Instance.AddItem(item, false);

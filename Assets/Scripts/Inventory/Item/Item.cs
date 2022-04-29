@@ -31,6 +31,10 @@ public class Item : MonoBehaviour
         Init(itemID);
     }
 
+    /// <summary>
+    /// 初始化item在地图或者背包
+    /// </summary>
+    /// <param name="ID"></param>
     public void Init(int ID)
     {
         itemDetails = InventoryManager.Instance.GetItemDetails(ID);
@@ -45,6 +49,8 @@ public class Item : MonoBehaviour
 
         spriteRenderer.sprite = itemDetails.itemOnWorldSprite != null ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
 
+        if(coll == null) return;
+        
         //修改collider尺寸
         Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
         coll.size = newSize;

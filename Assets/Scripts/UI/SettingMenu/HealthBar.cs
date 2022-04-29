@@ -49,9 +49,7 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
 
     public void RefershCoin()
     {
-
         moneyText.text = playerStats.Money.ToString("00");
-
     }
 
 }

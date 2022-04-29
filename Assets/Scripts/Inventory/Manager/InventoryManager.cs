@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InventoryManager : SingleTon<InventoryManager>
+public class InventoryManager : SingleTon<InventoryManager>, ISaveable
 {
     [Header("物品数据")]
     public ItemDataList_SO itemDataList_SO;
 
     [Header("背包数据")]
     public InventoryBag_SO playerBag;
-    private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
+    private Dictionary<string, List<InventoryItem>> sceneItemDict = new Dictionary<string, List<InventoryItem>>();
 
-    private void OnEnable() 
+    public string GUID => GetComponent<DataGUID>().guid;
+
+    private void Start()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveable();
+    }
+
+    private void OnEnable()
     {
         EventHandler.AfterSceneLoadEvent += UpdateUI;
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         EventHandler.AfterSceneLoadEvent -= UpdateUI;
     }
@@ -26,7 +34,7 @@ public class InventoryManager : SingleTon<InventoryManager>
     {
         EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
     }
-    
+
     public ItemDetails GetItemDetails(int ID)
     {
         return itemDataList_SO.itemDetails.Find(i => i.itemID == ID);
@@ -46,7 +54,7 @@ public class InventoryManager : SingleTon<InventoryManager>
 
         if (toDestory)
         {
-            if(!item.gameObject.CompareTag("NPC"))
+            if (!item.gameObject.CompareTag("NPC"))
                 Destroy(item.gameObject);
         }
 
@@ -101,4 +109,19 @@ public class InventoryManager : SingleTon<InventoryManager>
         }
     }
 
+    public GameSaveData GenerateSaveData()
+    {
+        GameSaveData saveData = new GameSaveData();
+        saveData.inventoryDict = new Dictionary<string, List<InventoryItem>>();
+        saveData.inventoryDict.Add(playerBag.name, playerBag.itemList);
+
+        return saveData;
+    }
+
+    public void RestoreData(GameSaveData saveData)
+    {
+        playerBag.itemList = saveData.inventoryDict[playerBag.name];
+
+        EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+    }
 }

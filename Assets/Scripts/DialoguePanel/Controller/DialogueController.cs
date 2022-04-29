@@ -8,7 +8,7 @@ public class DialogueController : MonoBehaviour
     public UnityEvent OnFinishEvent;
     public List<DialoguePiece> dialogueList = new List<DialoguePiece>();
     public Stack<DialoguePiece> dialogueStack;
-    public  bool canTalk = true;
+    public  bool canTalk = false;
     private bool isTalking = false;
     public bool isTrigger = false;
 
@@ -75,6 +75,7 @@ public class DialogueController : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = false;
             FillStack();
             isTalking = false;
+            canTalk = false;
             OnFinishEvent?.Invoke();
         }
     }
@@ -82,5 +83,10 @@ public class DialogueController : MonoBehaviour
     public void CanNotTalk_ExitTriggerOnly()
     {
         canTalk = false;
+    }
+
+    public void DestoryItSelf()
+    {
+        Destroy(gameObject);
     }
 }

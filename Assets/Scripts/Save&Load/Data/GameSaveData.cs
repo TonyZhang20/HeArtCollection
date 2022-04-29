@@ -6,11 +6,14 @@ using UnityEngine;
 public class GameSaveData
 {
     public string dataSceneName;
+
     /// <summary>
     /// Character Position Dictionnary
     /// </summary>
     public Dictionary<string, SerializableVector3> characterPosDict;
 
+    public Dictionary<string, List<SceneItem>> sceneItemDict;
+    public Dictionary<string, List<DialoguePrefabInfo>> DialogueDict;
     /// <summary>
     /// InventoryData
     /// </summary>
@@ -19,5 +22,7 @@ public class GameSaveData
     /// <summary>
     /// PlayerStats Save
     /// </summary>
-    public PlayerStats_SO playerStats;
+    public float currentHealth;
+    public float maxHealth;
+    public float Money;
 }
