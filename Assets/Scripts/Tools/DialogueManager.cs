@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DialogueManager : MonoBehaviour
-//ISaveable
+public class DialogueManager : MonoBehaviour, ISaveable
 {
-    public List<DialogKey> DialogKey = new List<DialogKey>();
     private Dictionary<string, List<DialoguePrefabInfo>> DialogueDict = new Dictionary<string, List<DialoguePrefabInfo>>();
     private Transform DialogueParent;
-
     public string GUID => GetComponent<DataGUID>().guid;
 
     private void Start()
     {
-        // ISaveable saveable = this;
-        // saveable.RegisterSaveable();
+        ISaveable saveable = this;
+        saveable.RegisterSaveable();
     }
 
     private void OnEnable()
@@ -46,7 +43,8 @@ public class DialogueManager : MonoBehaviour
         var currentSceneDialogue = new List<DialoguePrefabInfo>();
         foreach (var dialogue in FindObjectsOfType<DialogueController>())
         {
-            DialoguePrefabInfo dialoguePrefabInfo = new DialoguePrefabInfo { position = new SerializableVector3(dialogue.transform.position), dialogueController = dialogue };
+            //Debug.Log("Check Finish Success, the iD is " + dialogue.ID.ToString());
+            DialoguePrefabInfo dialoguePrefabInfo = new DialoguePrefabInfo { position = new SerializableVector3(dialogue.transform.position), ID = dialogue.ID, isFinish = dialogue.isFinishDialogue };
             currentSceneDialogue.Add(dialoguePrefabInfo);
         }
 
@@ -58,7 +56,6 @@ public class DialogueManager : MonoBehaviour
         {
             DialogueDict.Add(SceneManager.GetActiveScene().name, currentSceneDialogue);
         }
-
     }
 
     private void RecreateAllDialogue()
@@ -69,51 +66,58 @@ public class DialogueManager : MonoBehaviour
 
         if (DialogueDict.TryGetValue(SceneManager.GetActiveScene().name, out currentSceneDialogue))
         {
+            //Debug.Log("Get Value Success");
             if (currentSceneDialogue != null)
             {
                 foreach (var dialogue in FindObjectsOfType<DialogueController>())
                 {
-                    Destroy(dialogue.gameObject);
-                }
-
-                foreach (var dialogue in currentSceneDialogue)
-                {
-                    Instantiate(dialogue.dialogueController, dialogue.position.ToVector3(), Quaternion.identity, DialogueParent);
+                    foreach (var dia in currentSceneDialogue)
+                    {
+                        //列表只会存储被触发的对话
+                        if (dialogue.ID == dia.ID)
+                        {
+                            //Debug.Log("Change Finish Success");
+                            dialogue.isFinishDialogue = dia.isFinish;
+                            dialogue.CheckIsFinshed();
+                            break;
+                        }
+                    }
                 }
             }
         }
+
     }
 
-    // public GameSaveData GenerateSaveData()
-    // {
-    //     GetAllSceneDialogue();
+    private bool CheckID()
+    {
+        return false;
+    }
 
-    //     GameSaveData saveData = new GameSaveData();
-    //     saveData.DialogueDict = this.DialogueDict;
+    public GameSaveData GenerateSaveData()
+    {
+        GetAllSceneDialogue();
 
-    //     return saveData;
-    // }
+        GameSaveData saveData = new GameSaveData();
+        saveData.DialogueDict = this.DialogueDict;
 
-    // public void RestoreData(GameSaveData saveData)
-    // {
-    //     this.DialogueDict = saveData.DialogueDict;
+        return saveData;
+    }
 
-    //     RecreateAllDialogue();
-    // }
+    public void RestoreData(GameSaveData saveData)
+    {
+        this.DialogueDict = saveData.DialogueDict;
+
+        RecreateAllDialogue();
+    }
 }
 
 [System.Serializable]
 public class DialoguePrefabInfo
 {
     public SerializableVector3 position;
-    public DialogueController dialogueController;
+    public int ID;
+    public bool isFinish;
 }
 
-[System.Serializable]
-public class DialogKey
-{
-    public DialogueController dialogueController;
-    public string SceneName;
-}
 
 

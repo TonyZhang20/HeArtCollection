@@ -18,10 +18,6 @@ public class Item : MonoBehaviour
         Init(itemID);
     }
 
-    protected void OnDisable()
-    {
-    }
-
     private void CallItemID()
     {
         if (itemID == 0)
@@ -50,7 +46,7 @@ public class Item : MonoBehaviour
         spriteRenderer.sprite = itemDetails.itemOnWorldSprite != null ? itemDetails.itemOnWorldSprite : itemDetails.itemIcon;
 
         if(coll == null) return;
-        
+
         //修改collider尺寸
         Vector2 newSize = new Vector2(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
         coll.size = newSize;

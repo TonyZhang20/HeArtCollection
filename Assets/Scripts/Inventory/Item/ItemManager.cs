@@ -8,7 +8,6 @@ public class ItemManager : MonoBehaviour, ISaveable
     public Item itemPrefab;
     private Transform itemParent;
     private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
-
     public string GUID => GetComponent<DataGUID>().guid;
 
     private void Start() 
@@ -40,7 +39,7 @@ public class ItemManager : MonoBehaviour, ISaveable
         RecreateAllItem();
     }   
 
-    private void onInstantiateItemInScene(int ID, Vector3 position)
+    private void OnInstantiateItemInScene(int ID, Vector3 position)
     {
         if(itemParent == null) return;
 

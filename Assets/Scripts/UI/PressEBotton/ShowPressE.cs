@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShowPressE : MonoBehaviour
 {
+    public bool show = true;
     private GameObject pickCanvas;
     private Transform image;
     [SerializeField] private Vector3 movePosition;
@@ -26,7 +27,7 @@ public class ShowPressE : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && show)
         {
             image.gameObject.SetActive(true);
             pickCanvas.GetComponent<RectTransform>().position = transform.position + movePosition;

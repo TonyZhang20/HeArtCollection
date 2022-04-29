@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour,ISaveable
         transform.position = saveData.characterPosDict[this.name].ToVector3();
         var playerStats = GetComponent<PlayerStats>();
 
-        Debug.Log(saveData.Money.ToString());
+        //Debug.Log(saveData.Money.ToString());
 
         playerStats.Money = saveData.Money;
         playerStats.currentHealth = saveData.currentHealth;

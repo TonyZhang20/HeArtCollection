@@ -2633,6 +2633,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1628743929}
     m_Modifications:
     - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: ID
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: canTalk
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
       propertyPath: OnFinishEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2650,7 +2658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
       propertyPath: OnFinishEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DestoryItSelf
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
       propertyPath: OnFinishEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

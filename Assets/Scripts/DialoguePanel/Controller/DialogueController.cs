@@ -5,21 +5,35 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class DialogueController : MonoBehaviour
 {
+    public int ID;
     public UnityEvent OnFinishEvent;
     public List<DialoguePiece> dialogueList = new List<DialoguePiece>();
     public Stack<DialoguePiece> dialogueStack;
-    public  bool canTalk = false;
-    private bool isTalking = false;
+    public bool canTalk = false;
     public bool isTrigger = false;
+    public bool isFinishDialogue = false;
+    private bool isTalking = false;
+    private ShowPressE showPressE;
 
     private void Awake()
     {
         FillStack();
+        CheckIsFinshed();
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.AfterSceneLoadEvent += CheckIsFinshed;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= CheckIsFinshed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !isFinishDialogue)
         {
             canTalk = true;
         }
@@ -38,7 +52,7 @@ public class DialogueController : MonoBehaviour
         dialogueStack = new Stack<DialoguePiece>();
         for (int i = dialogueList.Count - 1; i > -1; i--)
         {
-            if(dialogueList[i].canRepeat)
+            if (dialogueList[i].canRepeat)
             {
                 dialogueList[i].isDone = false;
             }
@@ -46,9 +60,9 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    private void Update() 
+    private void Update()
     {
-        if(canTalk && Input.GetKeyDown(KeyCode.E) && !isTalking && !isTrigger)
+        if (canTalk && Input.GetKeyDown(KeyCode.E) && !isTalking && !isTrigger)
         {
             StartCoroutine(DialogueRoutine());
         }
@@ -58,13 +72,14 @@ public class DialogueController : MonoBehaviour
     {
         isTrigger = false;
         isTalking = true;
-        if(dialogueStack.TryPop(out DialoguePiece result) && !result.isDone)
+        if (dialogueStack.TryPop(out DialoguePiece result) && !result.isDone)
         {
+            //Debug.Log(result.isDone);
             EventHandler.CallShowDialogueEvent(result);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;
             yield return new WaitUntil(() => result.isDone);
             isTalking = false;
-            if(result.hasEvent)
+            if (result.hasEvent)
             {
                 result.AfterConversation?.Invoke();
             }
@@ -85,8 +100,28 @@ public class DialogueController : MonoBehaviour
         canTalk = false;
     }
 
-    public void DestoryItSelf()
+    public void SetActiveFalse()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void CheckIsFinshed()
+    {
+        if (isFinishDialogue)
+        {
+            if (dialogueStack.TryPop(out DialoguePiece result))
+            {
+                result.isDone = true;
+            }
+            canTalk = false;
+        }
+
+    }
+
+    public void Finish()
+    {
+        isFinishDialogue = true;
+        showPressE = gameObject.GetComponent<ShowPressE>();
+        showPressE.show = false;
     }
 }
