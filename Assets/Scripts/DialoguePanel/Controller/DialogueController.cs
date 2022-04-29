@@ -56,7 +56,11 @@ public class DialogueController : MonoBehaviour
             {
                 dialogueList[i].isDone = false;
             }
-            dialogueStack.Push(dialogueList[i]);
+            
+            if(dialogueList[i].isDone == false)
+            {
+                dialogueStack.Push(dialogueList[i]);
+            }
         }
     }
 
@@ -72,13 +76,22 @@ public class DialogueController : MonoBehaviour
     {
         isTrigger = false;
         isTalking = true;
-        if (dialogueStack.TryPop(out DialoguePiece result) && !result.isDone)
+        if (dialogueStack.TryPop(out DialoguePiece result))
         {
             //Debug.Log(result.isDone);
-            EventHandler.CallShowDialogueEvent(result);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;
-            yield return new WaitUntil(() => result.isDone);
+            if(result.isDone == false)
+            {
+                EventHandler.CallShowDialogueEvent(result);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;
+                yield return new WaitUntil(() => result.isDone);
+            }
+            else
+            {
+                yield return null;
+            }
+
             isTalking = false;
+
             if (result.hasEvent)
             {
                 result.AfterConversation?.Invoke();

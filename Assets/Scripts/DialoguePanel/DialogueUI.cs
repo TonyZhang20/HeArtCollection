@@ -70,18 +70,17 @@ public class DialogueUI : MonoBehaviour
                 faceRight.sprite = dialoguePiece.faceImage;
                 nameRight.text = dialoguePiece.Name;
             }
-
-
+            
             yield return dialogueText.DOText(dialoguePiece.dialogueText, 1f).WaitForCompletion();
 
             dialoguePiece.isDone = true;
         }
         else
         {
-            if(dialoguePiece != null && dialoguePiece.isDone)
-            {
-                yield return null;
-            }
+            // if(dialoguePiece != null && dialoguePiece.isDone)
+            // {
+            //     yield return null;
+            // }
             dialogueBox.SetActive(false);
             yield break;
         }

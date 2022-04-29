@@ -109,6 +109,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
         //New Game
         yield return loadSceneSetActive(sceneName);
         EventHandler.CallAfterSceneLoadedEvent();
+        
         yield return FadeLoadingPage(0f);
 
     }

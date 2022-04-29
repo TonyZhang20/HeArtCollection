@@ -2720,6 +2720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63da6321219a6745b794123a7d4fec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  show: 1
   movePosition: {x: 0.8, y: 0.8, z: 0}
 --- !u!1 &1251375412
 GameObject:
@@ -4293,11 +4294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: ID
-      value: 202
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].isDone
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[0].canRepeat
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[1].canRepeat
