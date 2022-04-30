@@ -79,7 +79,7 @@ public class SaveloadManager : SingleTon<SaveloadManager>
         }
     }
 
-    private void Save(int index)
+    public void Save(int index)
     {
         DataSlot data = new DataSlot();
 

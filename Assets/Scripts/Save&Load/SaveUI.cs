@@ -15,6 +15,6 @@ public class SaveUI : MonoBehaviour
 
     private void loadGameData()
     {
-        Debug.Log("Loading...");
+        //Debug.Log("Loading...");
     }
 }

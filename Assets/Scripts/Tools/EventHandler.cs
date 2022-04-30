@@ -9,7 +9,6 @@ public class EventHandler
     public static void CallUpdateInventoryUI(InventoryLocation location, List<InventoryItem> list)
     {
         UpdateInventoryUI?.Invoke(location, list);
-        Debug.Log("Refresh player Bag");
     }
 
     public static event Action<string, Vector3> TransitionEvent;
