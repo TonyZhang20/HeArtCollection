@@ -10,7 +10,7 @@ public class InventoryManager : SingleTon<InventoryManager>, ISaveable
 
     [Header("背包数据")]
     public InventoryBag_SO playerBag;
-    private Dictionary<string, List<InventoryItem>> sceneItemDict = new Dictionary<string, List<InventoryItem>>();
+    public InventoryBag_SO playerBag_Temp;
 
     public string GUID => GetComponent<DataGUID>().guid;
 
@@ -23,11 +23,13 @@ public class InventoryManager : SingleTon<InventoryManager>, ISaveable
     private void OnEnable()
     {
         EventHandler.AfterSceneLoadEvent += UpdateUI;
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
     }
 
     private void OnDisable()
     {
         EventHandler.AfterSceneLoadEvent -= UpdateUI;
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
     }
 
     public void UpdateUI()
@@ -38,6 +40,12 @@ public class InventoryManager : SingleTon<InventoryManager>, ISaveable
     public ItemDetails GetItemDetails(int ID)
     {
         return itemDataList_SO.itemDetails.Find(i => i.itemID == ID);
+    }
+
+    private void OnStartNewGameEvent(int obj)
+    {
+        playerBag = Instantiate(playerBag_Temp);
+        EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
     }
 
     /// <summary>
@@ -120,6 +128,7 @@ public class InventoryManager : SingleTon<InventoryManager>, ISaveable
 
     public void RestoreData(GameSaveData saveData)
     {
+        playerBag = Instantiate(playerBag_Temp);
         playerBag.itemList = saveData.inventoryDict[playerBag.name];
 
         EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);

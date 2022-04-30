@@ -12,21 +12,20 @@ public class PlayerStats : MonoBehaviour
 
     // public string GUID => GetComponent<DataGUID>().guid;
 
-    private void Start()
+    private void OnEnable() 
     {
-        // ISaveable saveable = this;
-        // saveable.RegisterSaveable();
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
     }
-    // public GameSaveData GenerateSaveData()
-    // {
-    //     GameSaveData saveData = new GameSaveData();
-    //     saveData.playerStats = playerStats;
-        
-    //     return saveData;
-    // }
 
-    // public void RestoreData(GameSaveData saveData)
-    // {
-    //     playerStats = saveData.playerStats;
-    // }
+    private void OnDisable() 
+    {
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
+    }
+
+    private void OnStartNewGameEvent(int obj)
+    {
+        currentHealth = Settings.maxHealth;
+        maxHealth = currentHealth;
+        Money = Settings.Money;
+    }
 }

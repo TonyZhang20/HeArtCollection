@@ -18,7 +18,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
     }
     private void Start()
     {
-        StartCoroutine(loadSceneSetActive(startSceneName));
+        //StartCoroutine(loadSceneSetActive(startSceneName));
         fadeCanvasGroup = FindObjectOfType<CanvasGroup>();
 
         ISaveable saveable = this;
@@ -29,13 +29,25 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
     {
         EventHandler.TransitionEvent += OnTransitionEvent;
         EventHandler.AfterSceneLoadEvent += findCanvasGroup;
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
+        EventHandler.EndGameEvent += OnEndGameEvent;
     }
-
-
     private void OnDisable()
     {
         EventHandler.TransitionEvent -= OnTransitionEvent;
         EventHandler.AfterSceneLoadEvent -= findCanvasGroup;
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
+        EventHandler.EndGameEvent -= OnEndGameEvent;
+    }
+
+    private void OnEndGameEvent()
+    {
+        StartCoroutine(UnloadScene());
+    }
+
+    private void OnStartNewGameEvent(int obj)
+    {
+        StartCoroutine(LoadSaveDataScene("home"));
     }
 
     private void findCanvasGroup()
@@ -54,15 +66,16 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
 
     private IEnumerator loadSceneSetActive(string sceneName)
     {
-        //yield return FadeLoadingPage(0);
 
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
         Scene newScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
 
         SceneManager.SetActiveScene(newScene);
-        EventHandler.CallAfterSceneLoadedEvent();
 
+        //yield return FadeLoadingPage(0);
+
+        EventHandler.CallAfterSceneLoadedEvent();
     }
 
     public IEnumerator ChangeScene(string sceneName, Vector3 targetPosition)
@@ -84,7 +97,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
     {
         isFade = true;
 
-        float speed = Mathf.Abs(fadeCanvasGroup.alpha - alpha) / Settings.loadingCanvasDuration * Time.deltaTime;
+        float speed = Mathf.Abs(fadeCanvasGroup.alpha - alpha) / Settings.loadingCanvasDuration * Time.deltaTime * 1.5f;
 
         while (!Mathf.Approximately(fadeCanvasGroup.alpha, alpha))
         {
@@ -95,11 +108,18 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
         isFade = false;
     }
 
+    private IEnumerator UnloadScene()
+    {
+        EventHandler.CallBeforeSceneLoadEvent();
+        yield return FadeLoadingPage(1f);
+        yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        yield return FadeLoadingPage(0f);
+    }
     private IEnumerator LoadSaveDataScene(string sceneName)
     {
         yield return FadeLoadingPage(1f);
-
-        if (SceneManager.GetActiveScene().name != "PresistentScene")
+        //Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name != "PlayerScenes")
         {
             //LoadGame in the Game
             EventHandler.CallBeforeSceneLoadEvent();
@@ -108,10 +128,10 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
 
         //New Game
         yield return loadSceneSetActive(sceneName);
-        EventHandler.CallAfterSceneLoadedEvent();
         
-        yield return FadeLoadingPage(0f);
-
+        yield return FadeLoadingPage(0);
+        
+        EventHandler.CallAfterSceneLoadedEvent();
     }
 
     public GameSaveData GenerateSaveData()

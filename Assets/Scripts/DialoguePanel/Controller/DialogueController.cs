@@ -36,6 +36,7 @@ public class DialogueController : MonoBehaviour
         if (other.CompareTag("Player") && !isFinishDialogue)
         {
             canTalk = true;
+            CheckIsFinshed();
         }
     }
 
@@ -44,6 +45,11 @@ public class DialogueController : MonoBehaviour
         if (other.CompareTag("Player") && isTrigger)
         {
             StartCoroutine(DialogueRoutine());
+        }
+
+        if (other.CompareTag("Player") && !isFinishDialogue)
+        {
+            canTalk = false;
         }
     }
 
@@ -56,8 +62,8 @@ public class DialogueController : MonoBehaviour
             {
                 dialogueList[i].isDone = false;
             }
-            
-            if(dialogueList[i].isDone == false)
+
+            if (dialogueList[i].isDone == false)
             {
                 dialogueStack.Push(dialogueList[i]);
             }
@@ -79,7 +85,7 @@ public class DialogueController : MonoBehaviour
         if (dialogueStack.TryPop(out DialoguePiece result))
         {
             //Debug.Log(result.isDone);
-            if(result.isDone == false)
+            if (result.isDone == false)
             {
                 EventHandler.CallShowDialogueEvent(result);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = true;
@@ -122,10 +128,18 @@ public class DialogueController : MonoBehaviour
     {
         if (isFinishDialogue)
         {
-            if (dialogueStack.TryPop(out DialoguePiece result))
+            // if (dialogueStack.TryPop(out DialoguePiece result))
+            // {
+            //     result.isDone = true;
+            // }
+
+            foreach (var result in dialogueStack)
             {
                 result.isDone = true;
             }
+
+            showPressE = gameObject.GetComponent<ShowPressE>();
+            showPressE.show = false;
             canTalk = false;
         }
 
@@ -134,7 +148,6 @@ public class DialogueController : MonoBehaviour
     public void Finish()
     {
         isFinishDialogue = true;
-        showPressE = gameObject.GetComponent<ShowPressE>();
-        showPressE.show = false;
+
     }
 }

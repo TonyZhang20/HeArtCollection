@@ -15,6 +15,7 @@ TagManager:
   - Dialoage
   - ItemParent
   - DialogueParent
+  - MenuCanvas
   layers:
   - Default
   - TransparentFX

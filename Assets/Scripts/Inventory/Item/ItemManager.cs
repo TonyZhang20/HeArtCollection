@@ -10,7 +10,7 @@ public class ItemManager : MonoBehaviour, ISaveable
     private Dictionary<string, List<SceneItem>> sceneItemDict = new Dictionary<string, List<SceneItem>>();
     public string GUID => GetComponent<DataGUID>().guid;
 
-    private void Start() 
+    private void Start()
     {
         ISaveable saveable = this;
         saveable.RegisterSaveable();
@@ -20,12 +20,19 @@ public class ItemManager : MonoBehaviour, ISaveable
     {
         EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadedEvent;
         EventHandler.AfterSceneLoadEvent += OnAfterSceneLoadedEvent;
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
     }
 
     private void OnDisable()
     {
         EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadedEvent;
         EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoadedEvent;
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
+    }
+
+    private void OnStartNewGameEvent(int obj)
+    {
+        sceneItemDict.Clear();
     }
 
     private void OnBeforeSceneUnloadedEvent()
@@ -37,11 +44,11 @@ public class ItemManager : MonoBehaviour, ISaveable
     {
         itemParent = GameObject.FindWithTag("ItemParent")?.transform;
         RecreateAllItem();
-    }   
+    }
 
     private void OnInstantiateItemInScene(int ID, Vector3 position)
     {
-        if(itemParent == null) return;
+        if (itemParent == null) return;
 
         var item = Instantiate(itemPrefab, position, Quaternion.identity, itemParent);
         item.itemID = ID;
@@ -69,20 +76,21 @@ public class ItemManager : MonoBehaviour, ISaveable
     {
         List<SceneItem> currentSceneItems = new List<SceneItem>();
 
-        if(itemParent == null) return;
+        if (itemParent == null) return;
 
-        if(sceneItemDict.TryGetValue(SceneManager.GetActiveScene().name, out currentSceneItems))
+        if (sceneItemDict.TryGetValue(SceneManager.GetActiveScene().name, out currentSceneItems))
         {
-            if(currentSceneItems != null)
+            if (currentSceneItems != null)
             {
-                foreach(var item in FindObjectsOfType<Item>())
+                foreach (var item in FindObjectsOfType<Item>())
                 {
                     Destroy(item.gameObject);
                 }
-                
+
                 foreach (var item in currentSceneItems)
                 {
                     Item newItem = Instantiate(itemPrefab, item.position.ToVector3(), Quaternion.identity, itemParent);
+                    newItem.itemID = item.itemID;
                     newItem.Init(item.itemID);
                 }
             }

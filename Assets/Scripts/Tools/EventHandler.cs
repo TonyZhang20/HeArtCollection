@@ -9,6 +9,7 @@ public class EventHandler
     public static void CallUpdateInventoryUI(InventoryLocation location, List<InventoryItem> list)
     {
         UpdateInventoryUI?.Invoke(location, list);
+        Debug.Log("Refresh player Bag");
     }
 
     public static event Action<string, Vector3> TransitionEvent;
@@ -45,5 +46,17 @@ public class EventHandler
     public static void CallInstantiateItemInScene(int ID, Vector3 pos)
     {
         InstantiateItemInScene?.Invoke(ID, pos);
+    }
+
+    public static event Action<int> StartNewGameEvent;
+    public static void CallStartNewGameEvent(int index)
+    {
+        StartNewGameEvent?.Invoke(index);
+    }
+
+    public static event Action EndGameEvent;
+    public static void CallEndGameEvent()
+    {
+        EndGameEvent?.Invoke();
     }
 }

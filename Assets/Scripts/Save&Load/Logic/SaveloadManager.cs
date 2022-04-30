@@ -16,19 +16,59 @@ public class SaveloadManager : SingleTon<SaveloadManager>
     {
         base.Awake();
         jsonFolder = Application.persistentDataPath + "/SAVE DATA/";
+        ReadSaveData();
     }
-    
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            Save(currentDataIndex);
-        }
 
-        if(Input.GetKeyDown(KeyCode.L))
+    private void Update()
+    {
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     Save(currentDataIndex);
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     Load(currentDataIndex);
+        // }
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
+        EventHandler.EndGameEvent += OnEndGameEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
+        EventHandler.EndGameEvent -= OnEndGameEvent;
+    }
+
+    private void OnEndGameEvent()
+    {
+        Save(currentDataIndex);
+    }
+
+    private void OnStartNewGameEvent(int index)
+    {
+        currentDataIndex = index;
+    }
+
+    private void ReadSaveData()
+    {
+        if (Directory.Exists(jsonFolder))
         {
-            Load(currentDataIndex);
-        }    
+            for (int i = 0; i < dataSlots.Count; i++)
+            {
+                var resultPath = jsonFolder + "data" + i + ".json";
+                if (File.Exists(resultPath))
+                {
+                    var stringData = File.ReadAllText(resultPath);
+                    var jsonData = JsonConvert.DeserializeObject<DataSlot>(stringData);
+                    dataSlots[i] = jsonData;
+                }
+            }
+        }
     }
 
     public void RegisterSaveable(ISaveable saveable)
@@ -47,7 +87,7 @@ public class SaveloadManager : SingleTon<SaveloadManager>
         {
             data.dataDic.Add(saveable.GUID, saveable.GenerateSaveData());
         }
-        
+
         dataSlots[index] = data;
 
         var resultPath = jsonFolder + "data" + index + ".json";
@@ -58,11 +98,13 @@ public class SaveloadManager : SingleTon<SaveloadManager>
         {
             Directory.CreateDirectory(jsonFolder);
         }
+        
+        Debug.Log("Data" + index + "Save!");
 
         File.WriteAllText(resultPath, jsonData);
     }
 
-    private void Load(int index)
+    public void Load(int index)
     {
         currentDataIndex = index;
 

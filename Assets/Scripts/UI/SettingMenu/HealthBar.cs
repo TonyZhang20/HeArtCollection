@@ -6,17 +6,28 @@ using UnityEngine.UI;
 using TMPro;
 public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExitHandler
 {
-    public GameObject player;
+    private GameObject player;
     public Sprite heartIcon;
     public TextMeshProUGUI moneyText;
     public Image[] heart;
     private PlayerStats playerStats;
     private Animator anim;
-
-    private void Start()
+    private void OnEnable()
     {
-        anim = GetComponent<Animator>();
+        EventHandler.AfterSceneLoadEvent += OnAfterSceneLoad;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoad;
+    }
+
+    private void OnAfterSceneLoad()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
         playerStats = player.GetComponent<PlayerStats>();
+        anim = GetComponent<Animator>();
+
         RefershHealthBar();
         RefershCoin();
     }
@@ -24,7 +35,7 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
     public void OnPointerEnter(PointerEventData eventData)
     {
         anim.SetTrigger("Down");
-        Debug.Log("Run");
+        //Debug.Log("Run");
     }
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -49,7 +60,7 @@ public class HealthBar : SingleTon<HealthBar>, IPointerEnterHandler, IPointerExi
 
     public void RefershCoin()
     {
-        moneyText.text = playerStats.Money.ToString("00");
+        moneyText.text = playerStats?.Money.ToString("00");
     }
 
 }

@@ -19,14 +19,21 @@ public class DialogueManager : MonoBehaviour, ISaveable
     {
         EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnload;
         EventHandler.AfterSceneLoadEvent += OnAfterSceneLoad;
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
     }
+
 
     private void OnDisable()
     {
         EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnload;
         EventHandler.AfterSceneLoadEvent -= OnAfterSceneLoad;
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
     }
 
+    private void OnStartNewGameEvent(int obj)
+    {
+        DialogueDict.Clear();
+    }
     private void OnAfterSceneLoad()
     {
         DialogueParent = GameObject.FindWithTag("DialogueParent")?.transform;

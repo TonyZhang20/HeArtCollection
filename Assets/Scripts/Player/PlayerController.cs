@@ -3,52 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour,ISaveable
+public class PlayerController : MonoBehaviour, ISaveable
 {
     private Rigidbody2D rb;
-
     private float inputX;
     private float inputY;
-
     public float speed;
     private Vector2 movementInput;
-
     public bool inputDisable;
     private Animator anim;
 
     public string GUID => GetComponent<DataGUID>().guid;
-
-    private void Start() 
-    {
-        ISaveable saveable = this;
-        saveable.RegisterSaveable();    
-    }
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-    }
-
     private void OnEnable()
     {
         EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
         EventHandler.AfterSceneLoadEvent += OnAfterSceneUnloadEvent;
         EventHandler.MoveToPosition += OnMoveToPosition;
+        EventHandler.StartNewGameEvent += OnStartNewGameEvent;
+        EventHandler.EndGameEvent += OnEndGameEvent;
     }
+
 
     private void OnDisable()
     {
         EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
         EventHandler.AfterSceneLoadEvent -= OnAfterSceneUnloadEvent;
         EventHandler.MoveToPosition -= OnMoveToPosition;
+        EventHandler.StartNewGameEvent -= OnStartNewGameEvent;
+        EventHandler.EndGameEvent -= OnEndGameEvent;
     }
 
+    private void OnEndGameEvent()
+    {
+        inputDisable = true;
+    }
+
+    private void OnStartNewGameEvent(int obj)
+    {
+        inputDisable = false;
+        transform.position = Settings.playerStartPos;
+    }
+    private void Start()
+    {
+        ISaveable saveable = this;
+        saveable.RegisterSaveable();
+    }
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        inputDisable = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        if(inputDisable == false)
+        if (inputDisable == false)
+        {
             PlayerInput();
+        }
+        else
+        {
+            inputX = 0;
+            inputY = 0;
+        }
 
         SetAnimation();
 
@@ -56,14 +73,14 @@ public class PlayerController : MonoBehaviour,ISaveable
 
     void FixedUpdate()
     {
-        if(inputDisable == false)
+        if (inputDisable == false)
             Movement();
     }
 
     private void SetAnimation()
     {
-        anim.SetFloat("InputX",inputX);
-        anim.SetFloat("InputY",inputY);
+        anim.SetFloat("InputX", inputX);
+        anim.SetFloat("InputY", inputY);
     }
 
     private void PlayerInput()
