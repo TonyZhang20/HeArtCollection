@@ -42,14 +42,16 @@ public class DialogueController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+
+        if (other.CompareTag("Player") && !isFinishDialogue && !isTrigger)
+        {
+            canTalk = false;
+        }
+
         if (other.CompareTag("Player") && isTrigger)
         {
             StartCoroutine(DialogueRoutine());
-        }
-
-        if (other.CompareTag("Player") && !isFinishDialogue)
-        {
-            canTalk = false;
+            canTalk = true;
         }
     }
 
@@ -108,8 +110,8 @@ public class DialogueController : MonoBehaviour
             EventHandler.CallShowDialogueEvent(null);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = false;
             FillStack();
-            isTalking = false;
             canTalk = false;
+            isTalking = false;
             OnFinishEvent?.Invoke();
         }
     }
@@ -117,6 +119,11 @@ public class DialogueController : MonoBehaviour
     public void CanNotTalk_ExitTriggerOnly()
     {
         canTalk = false;
+    }
+
+    public void CanTalk()
+    {
+        canTalk = true;
     }
 
     public void SetActiveFalse()
@@ -139,7 +146,10 @@ public class DialogueController : MonoBehaviour
             }
 
             showPressE = gameObject.GetComponent<ShowPressE>();
-            showPressE.show = false;
+            if (showPressE != null)
+            {
+                showPressE.show = false;
+            }
             canTalk = false;
         }
 
@@ -148,6 +158,5 @@ public class DialogueController : MonoBehaviour
     public void Finish()
     {
         isFinishDialogue = true;
-
     }
 }
