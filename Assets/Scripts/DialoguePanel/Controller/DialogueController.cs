@@ -55,7 +55,7 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    private void FillStack()
+    public void FillStack()
     {
         dialogueStack = new Stack<DialoguePiece>();
         for (int i = dialogueList.Count - 1; i > -1; i--)
@@ -84,7 +84,8 @@ public class DialogueController : MonoBehaviour
     {
         isTrigger = false;
         isTalking = true;
-        if (dialogueStack.TryPop(out DialoguePiece result))
+        DialoguePiece result;
+        if (dialogueStack.TryPop(out result) && !result.StopDialogue)
         {
             //Debug.Log(result.isDone);
             if (result.isDone == false)
@@ -107,6 +108,11 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
+            if (result != null && !result.hasTag)
+            {
+                result.StopDialogue = false;
+            }
+
             EventHandler.CallShowDialogueEvent(null);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().inputDisable = false;
             FillStack();

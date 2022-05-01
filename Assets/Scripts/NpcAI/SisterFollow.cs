@@ -9,6 +9,7 @@ public class SisterFollow : MonoBehaviour
     private GameObject Player;
     private bool isChasing = false;
     private Animator anim;
+    private bool Cansing = true;
 
     private void Start()
     {
@@ -35,20 +36,18 @@ public class SisterFollow : MonoBehaviour
 
     private void Update()
     {
-        if (isChasing)
+        if (isChasing && Cansing)
         {
             SetupAnimation();
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, Speed * Time.deltaTime);
         }
     }
 
-    private void ChaseAtStart()
+    public void ChaseAtStart()
     {
-        if (Player == null && isChasing == false)
-        {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            isChasing = true;
-        }
+        Player = GameObject.FindGameObjectWithTag("Player");
+        isChasing = true;
+        Cansing = true;
     }
 
     private void SetupAnimation()
@@ -178,4 +177,10 @@ public class SisterFollow : MonoBehaviour
         }
     }
     #endregion
+
+    public void StopChasing()
+    {
+        isChasing = false;
+        Cansing = false;
+    }
 }

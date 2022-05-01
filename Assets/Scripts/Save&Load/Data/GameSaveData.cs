@@ -25,4 +25,8 @@ public class GameSaveData
     public float currentHealth;
     public float maxHealth;
     public float Money;
+    /// <summary>
+    /// Portal
+    /// </summary>
+    public bool CanTravel;
 }

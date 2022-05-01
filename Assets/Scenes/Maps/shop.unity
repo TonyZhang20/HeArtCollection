@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21510367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.026, y: -0.142, z: 0}
+  m_LocalPosition: {x: 0.08, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -445,6 +445,7 @@ GameObject:
   - component: {fileID: 188806348}
   - component: {fileID: 188806350}
   - component: {fileID: 188806349}
+  - component: {fileID: 188806351}
   m_Layer: 0
   m_Name: TeleportToHome
   m_TagString: Untagged
@@ -481,6 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToGo: home
   positionToGo: {x: -6, y: -3, z: 0}
+  CanTravel: 1
 --- !u!61 &188806350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -507,6 +509,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.3616543, y: 2.257535}
   m_EdgeRadius: 0
+--- !u!114 &188806351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188806347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36bd47470ebb2d4296b71c5bc735ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: 500e078c-a089-4f45-8271-2d449e4eb0cf
 --- !u!1 &192901479
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +626,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0036223829, y: 0.19177727}
+  m_Offset: {x: -0.0036223829, y: 0.0904802}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49527004, y: 0.026487708}
@@ -622,7 +637,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5145727, y: 0.16427782}
+  m_Size: {x: 0.5145727, y: 0.22825499}
   m_EdgeRadius: 0
 --- !u!212 &220221294
 SpriteRenderer:
@@ -2550,7 +2565,7 @@ SpriteRenderer:
   m_Size: {x: 1.1875, y: 1.03125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!1 &1208677281
@@ -3972,6 +3987,7 @@ GameObject:
   - component: {fileID: 1859611375}
   - component: {fileID: 1859611377}
   - component: {fileID: 1859611376}
+  - component: {fileID: 1859611378}
   m_Layer: 0
   m_Name: TeleportToTown
   m_TagString: Untagged
@@ -4008,6 +4024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToGo: Town
   positionToGo: {x: -11, y: -8, z: 0}
+  CanTravel: 1
 --- !u!61 &1859611377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4034,6 +4051,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.3616543, y: 2.257535}
   m_EdgeRadius: 0
+--- !u!114 &1859611378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859611374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36bd47470ebb2d4296b71c5bc735ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: fee9b409-a5e2-4c59-937d-280a89fe619c
 --- !u!1 &1951610904
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,13 +4341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc709a3936ffd941a3f35a8ed440a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 202
   OnFinishEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2094604475}
-        m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
-        m_MethodName: SetCatCanvasActive
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4326,18 +4356,393 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 98ee9a78102e4f34cb390d94d050a5d3, type: 3}
-    onLeft: 0
-    Name: 
-    dialogueText: 111
+  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u662F\u5C0F\u732B\u54AA\uFF0C\u597D\u53EF\u7231\uFF01"
     isDone: 0
     canRepeat: 0
     hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u54E5\u54E5\u4F60\u6709\u5403\u7684\u5417\uFF0C\u6211\u60F3\u5582\u732B\u732B\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+    onLeft: 0
+    Name: "\u5C0F\u732B"
+    dialogueText: "\u55B5~"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 0
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u6CA1\u6709"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+    onLeft: 0
+    Name: "\u5C0F\u732B"
+    dialogueText: "\u5567"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u5B83\u521A\u624D\u597D\u50CF\u8BF4\u4EC0\u4E48\u4E86"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: ff4cf3617c639804890cb5bc8c415936, type: 3}
+    onLeft: 0
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u8FD9\u732B\u597D\u673A\u7075\uFF0C\u6CA1\u5403\u7684\u5C31\u6CA1\u6CD5\u8BA8\u597D\u5B83\uFF0C\u6211\u4EEC\u8D70\u5427"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 387219cfdd096874aa428e7b4b255d7f, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u6211\u4E0D\u8D70\uFF01\u6211\u8981\u5582\u732B\u732B\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+    onLeft: 0
+    Name: "\u5C0F\u732B"
+    dialogueText: "\u55B5"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 1
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094604475}
+          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
+          m_MethodName: StopSister
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 188806349}
+          m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+          m_MethodName: CanNotTravel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1859611376}
+          m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+          m_MethodName: CanNotTravel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - faceImage: {fileID: 21300000, guid: ff4cf3617c639804890cb5bc8c415936, type: 3}
+    onLeft: 0
+    Name: "\u54E5\u54E5"
+    dialogueText: "(\u867D\u7136\u5F88\u4E0D\u60C5\u613F\u4F46\u662F\u53EA\u80FD\u60F3\u60F3\u529E\u6CD5\u4E86)"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 0
+    Name: "\u54E5\u54E5"
+    dialogueText: "(\u524D\u9762\u597D\u50CF\u6709\u5C0F\u5356\u90E8\uFF0C\u53BB\u770B\u770B\u5427)"
+    isDone: 0
+    canRepeat: 1
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 1
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u5C0F\u732B\u54AA\u5FEB\u6765\u5403\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 1
+    hasTag: 1
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+    onLeft: 0
+    Name: "\u5C0F\u732B"
+    dialogueText: '!'
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 1
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094604475}
+          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
+          m_MethodName: SetCatCanvasActive
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - faceImage: {fileID: 21300000, guid: ff4cf3617c639804890cb5bc8c415936, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u732B\u732B\u5C41\u80A1\u4E0B\u9762\u597D\u50CF\u538B\u7740\u4EC0\u4E48"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+    onLeft: 0
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u662F\u7535\u6C60\u54C7\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u4E0D\u77E5\u9053\u8FD8\u80FD\u7528\u5417\uFF0C\u770B\u8D77\u6765\u86EE\u65B0\u7684\u3002"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u6E38\u620F\u673A\uFF01\u521A\u597D\u7F3A\u4E24\u8282\u7535\u6C60\u6765\u7740\u2026"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u4F60\u54EA\u6765\u7684\u6E38\u620F\u673A\uFF1F"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u6211\u4ECE\u9601\u697C\u91CC\u7FFB\u51FA\u6765\u7684\uFF0C\u5976\u5976\u8BF4\uFF0C\u662F\u7238\u7238\u5C0F\u65F6\u5019\u73A9\u7684\u3002"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 0
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u5582\u2026\u968F\u4FBF\u88C5\u6765\u5386\u4E0D\u660E\u7684\u7535\u6C60\u4F1A\u4E0D\u4F1A\u4E0D\u597D\u2026"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: b073f1789f8e9fa47829cbee7812f14b, type: 3}
+    onLeft: 1
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u603B\u4E0D\u4F1A\u7206\u70B8\u5427\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u6309\u7406\u8BF4\u5B9E\u73B0\u8D77\u6765\u4F1A\u6BD4\u8F83\u56F0\u96BE\u3002"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 1
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1859611376}
+          m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+          m_MethodName: CanTeleport
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - faceImage: {fileID: 21300000, guid: 6606104af19b32e4c87fbfff314f7033, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u88C5\u597D\u4E86\uFF0C\u4F60\u770B\uFF0C\u4EC0\u4E48\u4E8B\u4E5F\u6CA1\u6709"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 6606104af19b32e4c87fbfff314f7033, type: 3}
+    onLeft: 0
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u54B1\u4EEC\u518D\u53BB\u5C0F\u9547\u770B\u770B\u5427\uFF01"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    onLeft: 0
+    Name: "\u59B9\u59B9"
+    dialogueText: "\u563F\u563F\uFF0C\u5C45\u7136\u8FD8\u80FD\u73A9\u8D2A\u5403\u86C7...
+      ..."
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 1
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2094604475}
+          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
+          m_MethodName: TransLate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2094604477}
+          m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+          m_MethodName: Finish
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   canTalk: 0
   isTrigger: 0
   isFinishDialogue: 0
@@ -4354,7 +4759,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06197834, y: -0.74820757}
+  m_Offset: {x: 0.34225082, y: -0.74820757}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4365,7 +4770,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2624226, y: 1.9358273}
+  m_Size: {x: 5.8470955, y: 1.9358273}
   m_EdgeRadius: 0
 --- !u!1001 &4736490082644288559
 PrefabInstance:
@@ -4422,13 +4827,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u770B\u7F8A"
       objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719358, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: m_Size.x
+      value: 2.358732
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719358, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: m_Size.y
+      value: 6.589437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719358, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.1798674
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719358, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.7947185
+      objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: ID
-      value: 102
+      value: 201
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: isFinishDialogue
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].Name
+      value: "\u7F8A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[1].Name
+      value: "\u59B9\u59B9"
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[0].isDone
@@ -4439,8 +4868,60 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 80606e29cf3a3a74b9e1e89fe000ec1b, type: 3}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[1].canRepeat
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[1].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].StopDialogue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].dialogueText
+      value: "\u54A9~"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[1].StopDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[1].dialogueText
+      value: "(\u6BDB\u8338\u8338\u7684\uFF0C\u771F\u53EF\u7231)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
+      propertyPath: dialogueList.Array.data[0].AfterConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}

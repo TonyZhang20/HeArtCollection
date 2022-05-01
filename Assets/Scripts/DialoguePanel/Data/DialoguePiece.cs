@@ -15,5 +15,7 @@ public class DialoguePiece
     public bool isDone;
     public bool canRepeat = true;
     public bool hasEvent = false;
+    public bool StopDialogue = false;
+    public bool hasTag = false;
     public UnityEvent AfterConversation;
 }

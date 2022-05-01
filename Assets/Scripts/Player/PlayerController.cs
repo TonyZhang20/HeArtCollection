@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private Vector2 movementInput;
     public bool inputDisable;
     private Animator anim;
+    private bool isMoving;
 
     public string GUID => GetComponent<DataGUID>().guid;
     private void OnEnable()
@@ -79,8 +80,12 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     private void SetAnimation()
     {
-        anim.SetFloat("InputX", inputX);
-        anim.SetFloat("InputY", inputY);
+        anim.SetBool("isMoving", isMoving);
+        if(isMoving)
+        {
+            anim.SetFloat("InputX", inputX);
+            anim.SetFloat("InputY", inputY);
+        }
     }
 
     private void PlayerInput()
@@ -95,6 +100,10 @@ public class PlayerController : MonoBehaviour, ISaveable
         }
 
         movementInput = new Vector2(inputX, inputY);
+
+        isMoving = movementInput != Vector2.zero;
+
+        
     }
 
     private void Movement()
