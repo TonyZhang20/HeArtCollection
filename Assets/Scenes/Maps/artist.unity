@@ -1168,7 +1168,7 @@ Transform:
   - {fileID: 744942778}
   - {fileID: 957816920}
   m_Father: {fileID: 839857293}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580243023
 GameObject:
@@ -1822,6 +1822,7 @@ Transform:
   - {fileID: 791888518}
   - {fileID: 1282456055}
   - {fileID: 56500561}
+  - {fileID: 1709349674}
   - {fileID: 578832339}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3302,6 +3303,89 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1709349673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709349674}
+  - component: {fileID: 1709349675}
+  m_Layer: 0
+  m_Name: SceneWall
+  m_TagString: SceneWall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1709349674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709349673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 839857293}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1709349675
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709349673}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.5894175, y: 8.483511}
+      - {x: -7.308728, y: 8.4864}
+      - {x: -7.311784, y: 3.1659513}
+      - {x: -7.04848, y: 3.32555}
+      - {x: -4.622941, y: 3.2951775}
+      - {x: -4.6081877, y: -5.1214385}
+      - {x: -2.8492546, y: -5.140173}
+      - {x: -2.8371983, y: -9.807289}
+      - {x: 3.6454282, y: -9.821365}
+      - {x: 3.6376953, y: -10.6354}
+      - {x: 4.6727157, y: -10.640459}
+      - {x: 4.6660852, y: -9.799971}
+      - {x: 5.643846, y: -9.7912655}
+      - {x: 5.6572466, y: -2.4885454}
+      - {x: 5.728066, y: -2.4920225}
+      - {x: 5.8309875, y: -2.6199558}
+      - {x: 5.8665977, y: 0.1956116}
+      - {x: 3.8093033, y: 0.23952866}
+      - {x: 3.831551, y: 2.126158}
+      - {x: 5.706284, y: 2.1300325}
+      - {x: 5.8050632, y: 1.9924306}
+      - {x: 5.824461, y: 2.0791426}
+      - {x: 5.79443, y: 6.342251}
+      - {x: 3.792368, y: 6.3432317}
+      - {x: 3.7788181, y: 7.364478}
+      - {x: -1.5755895, y: 7.33675}
 --- !u!1 &1735565349
 GameObject:
   m_ObjectHideFlags: 0
