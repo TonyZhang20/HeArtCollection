@@ -18,4 +18,6 @@ public class DialoguePiece
     public bool StopDialogue = false;
     public bool hasTag = false;
     public UnityEvent AfterConversation;
+    public bool hasToPause = true;
+    public float waitTime = 1f;
 }

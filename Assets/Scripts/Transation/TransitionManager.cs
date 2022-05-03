@@ -47,7 +47,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
 
     private void OnStartNewGameEvent(int obj)
     {
-        StartCoroutine(LoadSaveDataScene("home"));
+        StartCoroutine(LoadSaveDataScene("artist"));
     }
 
     private void findCanvasGroup()

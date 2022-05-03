@@ -36,7 +36,7 @@ public class NewGame : MonoBehaviour
         if(!haveSpaceToSave)
         {
             EventHandler.CallStartNewGameEvent(0);
-            Debug.Log("Have not Run");
+            //Debug.Log("Have not Run");
             return;
         }
 
