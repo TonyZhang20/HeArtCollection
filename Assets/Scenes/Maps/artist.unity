@@ -324,7 +324,19 @@ MonoBehaviour:
   ID: 502
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 66955958}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogueList:
   - faceImage: {fileID: 21300000, guid: ff4cf3617c639804890cb5bc8c415936, type: 3}
     onLeft: 0
@@ -332,7 +344,7 @@ MonoBehaviour:
     dialogueText: "\u91CD\u5EA6\u7126\u8651\u75C7... .."
     isDone: 0
     canRepeat: 0
-    hasEvent: 0
+    hasEvent: 1
     StopDialogue: 0
     hasTag: 0
     AfterConversation:
@@ -1148,6 +1160,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.153848, y: 2.384625}
   m_EdgeRadius: 0
+--- !u!1 &334184964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334184965}
+  - component: {fileID: 334184966}
+  m_Layer: 0
+  m_Name: wall3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &334184965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334184964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.67, y: -11.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 578832339}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &334184966
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334184964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15491024, y: 0.3353569}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9728324, y: 0.49906218}
+  m_EdgeRadius: 0
 --- !u!1 &371119077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1537,7 @@ Transform:
   - {fileID: 580243024}
   - {fileID: 744942778}
   - {fileID: 957816920}
+  - {fileID: 334184965}
   m_Father: {fileID: 839857293}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4853,6 +4924,94 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.059541702, y: 1.1982894}
   m_EdgeRadius: 0
+--- !u!1 &1841496055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841496059}
+  - component: {fileID: 1841496058}
+  - component: {fileID: 1841496057}
+  - component: {fileID: 1841496056}
+  m_Layer: 0
+  m_Name: Teleport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1841496056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841496055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8a2d7ad3c35b544853da6b1f11e4d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToGo: town
+  positionToGo: {x: 1.8, y: 3.7, z: 0}
+  CanTravel: 1
+--- !u!114 &1841496057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841496055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36bd47470ebb2d4296b71c5bc735ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: 6b63ff92-9d30-403a-9f50-1dff818561a1
+--- !u!61 &1841496058
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841496055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.122801304, y: -0.11877537}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8898067, y: 0.76244926}
+  m_EdgeRadius: 0
+--- !u!4 &1841496059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841496055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.672, y: -14.278, z: -0.043832418}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1853597502
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,7 +5467,19 @@ MonoBehaviour:
   ID: 505
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015522847}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
     onLeft: 0
@@ -5491,7 +5662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a62ef865f8cd047ad839f941e9e978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 1.8, y: 3.7, z: 0}
+  position: {x: -13.18, y: -4.3, z: 0}
   Check: 1
 --- !u!1 &2063814717
 GameObject:

@@ -29,6 +29,12 @@ public class NpcArtist : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void PlayDog()
+    {
+        var DogPanel = FindObjectOfType<DogPanel>();
+        DogPanel.Panel.SetActive(true);
+    }
     
     private void GetAnim()
     {

@@ -1458,7 +1458,19 @@ MonoBehaviour:
   ID: 0
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652556796}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogueList:
   - faceImage: {fileID: 21300000, guid: b073f1789f8e9fa47829cbee7812f14b, type: 3}
     onLeft: 1
@@ -1524,13 +1536,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652556795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.61, y: 3.92, z: -0.0899707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.565725, y: -5.004981, z: 0.054339178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 725912206}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678648912
 GameObject:
@@ -1648,6 +1660,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.5824804, y: 3.8870919}
   m_EdgeRadius: 0
+--- !u!1 &725912205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725912206}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &725912206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725912205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4442754, y: 1.9049811, z: -0.14430988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 652556798}
+  - {fileID: 1685048081}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759040626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3181,125 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   show: 1
   movePosition: {x: 0, y: 2, z: 0}
+--- !u!1 &1685048080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1685048081}
+  - component: {fileID: 1685048083}
+  - component: {fileID: 1685048082}
+  m_Layer: 0
+  m_Name: Before
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1685048081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685048080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.56, y: 1.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 725912206}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685048082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685048080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc709a3936ffd941a3f35a8ed440a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  OnFinishEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685048082}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dialogueList:
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u8BF6\uFF0C\u662F\u753B\u5BB6\u59D0\u59D0\u4F4F\u7684\u90A3\u7247\u533A\u57DF\uFF0C\u6211\u4EEC\u53BB\u627E\u5979\u95EE\u4E00\u4E0B\u5427\u3002"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+    hasToPause: 1
+    waitTime: 1
+  - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
+    onLeft: 1
+    Name: "\u54E5\u54E5"
+    dialogueText: "\u662F\u865A\u63A9\u7684\uFF0C\u8FD9\u6837\u76F4\u63A5\u8FDB\u53BB\u6CA1\u95EE\u9898\u5417\uFF1F"
+    isDone: 0
+    canRepeat: 0
+    hasEvent: 0
+    StopDialogue: 0
+    hasTag: 0
+    AfterConversation:
+      m_PersistentCalls:
+        m_Calls: []
+    hasToPause: 1
+    waitTime: 1
+  canTalk: 0
+  isTrigger: 1
+  isFinishDialogue: 0
+--- !u!61 &1685048083
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685048080}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.616372, y: -0.2209636}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.209635, y: 1.4419272}
+  m_EdgeRadius: 0
 --- !u!1 &1687959797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3864,9 +4028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8a2d7ad3c35b544853da6b1f11e4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToGo: 
-  positionToGo: {x: 0, y: 0, z: 0}
-  CanTravel: 0
+  sceneToGo: d-artist
+  positionToGo: {x: -5.68, y: -8.3, z: 0}
+  CanTravel: 1
 --- !u!114 &2103437762
 MonoBehaviour:
   m_ObjectHideFlags: 0

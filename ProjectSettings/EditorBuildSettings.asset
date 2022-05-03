@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/d-town.unity
     guid: 29e5811f3f1b3b946bad9d3635bb17eb
+  - enabled: 1
+    path: Assets/Scenes/Maps/d-artist.unity
+    guid: 1c27117aceb0a804b8d1088c02e7328a
   m_configObjects: {}
