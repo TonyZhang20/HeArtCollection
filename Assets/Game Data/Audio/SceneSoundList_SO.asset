@@ -15,8 +15,8 @@ MonoBehaviour:
   sceneSoundList:
   - sceneName: home
     FirstMusic: 1
-    SecondMusic: 0
-    LastMusic: 0
+    SecondMusic: 1
+    LastMusic: 1
   - sceneName: shop
     FirstMusic: 3
     SecondMusic: 4
@@ -26,22 +26,26 @@ MonoBehaviour:
     SecondMusic: 4
     LastMusic: 5
   - sceneName: artist
-    FirstMusic: 12
-    SecondMusic: 13
-    LastMusic: 14
+    FirstMusic: 7
+    SecondMusic: 8
+    LastMusic: 9
   - sceneName: d-home
     FirstMusic: 2
-    SecondMusic: 0
-    LastMusic: 0
+    SecondMusic: 2
+    LastMusic: 2
   - sceneName: d-shop
     FirstMusic: 6
-    SecondMusic: 0
-    LastMusic: 0
+    SecondMusic: 6
+    LastMusic: 6
   - sceneName: d-town
     FirstMusic: 6
-    SecondMusic: 0
-    LastMusic: 0
+    SecondMusic: 6
+    LastMusic: 6
   - sceneName: d-artist
     FirstMusic: 12
     SecondMusic: 13
     LastMusic: 14
+  - sceneName: PlayerScenes
+    FirstMusic: 7
+    SecondMusic: 8
+    LastMusic: 9

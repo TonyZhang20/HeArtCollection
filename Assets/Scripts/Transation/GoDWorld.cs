@@ -31,7 +31,7 @@ public class GoDWorld : MonoBehaviour
 
     public void Transfrom()
     {
-        EventHandler.CallTransitionEvent("d-town", position);
+        EventHandler.CallTransitionEvent("d-home", position);
         Debug.Log("Run");
     }
 

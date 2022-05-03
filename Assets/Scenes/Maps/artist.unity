@@ -5662,7 +5662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a62ef865f8cd047ad839f941e9e978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -13.18, y: -4.3, z: 0}
+  position: {x: 0, y: 0, z: 0}
   Check: 1
 --- !u!1 &2063814717
 GameObject:

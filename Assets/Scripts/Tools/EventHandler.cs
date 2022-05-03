@@ -58,4 +58,11 @@ public class EventHandler
     {
         EndGameEvent?.Invoke();
     }
+
+    public static event Action TimeLienStopped;
+    public static void CallTimeLienStoppedEvent()
+    {
+        TimeLienStopped?.Invoke();
+    }
+
 }

@@ -12,7 +12,7 @@ public enum InventoryLocation { Player, Shop }
 
 public enum  SoundName 
 {
-none, GrandMonDayTime, GrandMonNight, 
+None, GrandMonDayTime, GrandMonNight, 
 ParkIntro, ParkRep, ParkLoop, ParkNight,
 ThemeIntro, ThemeIntroRep, Themeloop, ThemeLoopRep,ThemeEnd,
 PainterIntro, PainterRep, PainterLoop

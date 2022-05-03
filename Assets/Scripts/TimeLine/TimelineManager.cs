@@ -41,6 +41,7 @@ public class TimelineManager : SingleTon<TimelineManager>
             FindObjectOfType<PlayerController>().inputDisable = false;
             director.gameObject.SetActive(false);
         }
+        EventHandler.CallTimeLienStoppedEvent();
     }
 
     private void TimeLinePlayed(PlayableDirector director)
@@ -49,5 +50,6 @@ public class TimelineManager : SingleTon<TimelineManager>
         {
             FindObjectOfType<PlayerController>().inputDisable = true;
         }
+        AudioManager.Instance.startAudio.Stop();
     }
 }

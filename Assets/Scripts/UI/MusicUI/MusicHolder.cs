@@ -23,16 +23,20 @@ public class MusicHolder : MonoBehaviour
 
     public void ChangeChildAlpha(int index)
     {
+        float count = 0;
         for (int i = 0; i < musicAlphas.Length; i++)
         {
             if (i <= index)
             {
                 musicAlphas[i].ChangeAlphaToOne();
+                count++;
             }
             else
             {
                 musicAlphas[i].ChangeAlphaToZero();
             }
         }
+
+        AudioManager.Instance.audioMixer.SetFloat("MusicVolume", AudioManager.Instance.ConvertSoundVolume((float)count / 12f));
     }
 }

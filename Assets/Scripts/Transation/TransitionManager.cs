@@ -47,7 +47,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
 
     private void OnStartNewGameEvent(int obj)
     {
-        StartCoroutine(LoadSaveDataScene("town"));
+        StartCoroutine(LoadSaveDataScene("home"));
     }
 
     private void findCanvasGroup()
@@ -131,7 +131,7 @@ public class TransitionManager : SingleTon<TransitionManager>, ISaveable
         
         yield return FadeLoadingPage(0);
         
-        EventHandler.CallAfterSceneLoadedEvent();
+        //EventHandler.CallAfterSceneLoadedEvent();
     }
 
     public GameSaveData GenerateSaveData()

@@ -36,6 +36,7 @@ public class SisterFollow : MonoBehaviour
 
     private void Update()
     {
+        anim.SetBool("isMoving", isChasing);
         if (isChasing && Cansing)
         {
             SetupAnimation();
@@ -54,6 +55,8 @@ public class SisterFollow : MonoBehaviour
     {
         var distanX = Player.transform.position.x - transform.position.x;
         var distanY = Player.transform.position.y - transform.position.y;
+        anim.SetFloat("InputX",distanX);
+        anim.SetFloat("InputY",distanX);
         //这个时候玩家在妹妹的右上方
         if (distanX > 0 && distanY > 0)
         {
