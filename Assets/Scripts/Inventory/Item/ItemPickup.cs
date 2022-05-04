@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
+    private bool showingEffect = true;
     private bool canPickup = false;
     public bool hasEvent = false;
+    public GameObject EffectPrefabs;
+    [SerializeField] private Vector3 position;
     private void Update()
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E))
@@ -19,6 +22,22 @@ public class ItemPickup : MonoBehaviour
             GameObject.FindGameObjectWithTag("DialoageCanvas").GetComponent<DialogueUI>().ShowPanel("你获得了" + item.itemDetails.itemName);
         }
         //Debug.Log(InventoryManager.Instance.GetItemDetails(1004).canPickup);
+        if(showingEffect && !hasEvent)
+        {
+            StartCoroutine(ShowEffect());
+        }
+        
+    }
+    IEnumerator ShowEffect()
+    {
+        showingEffect = false;
+        EffectPrefabs.SetActive(true);
+        
+        yield return new WaitForSeconds(3f);
+        
+        var MineEffect = Instantiate(EffectPrefabs);
+        MineEffect.transform.position = transform.position + position;
+        showingEffect = true;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -1483,6 +1483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 3, y: -1.5, z: 0}
 --- !u!114 &408478198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 0, y: 0, z: 0}
 --- !u!114 &704428496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2036,6 +2040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 3, y: -1, z: 0}
 --- !u!114 &789284821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2686,6 +2692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 3, y: -2, z: 0}
 --- !u!114 &882337707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,6 +4160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 3.5, y: -2.5, z: 0}
 --- !u!114 &1483954808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4321,6 +4331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 0
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 0, y: 0, z: 0}
 --- !u!114 &1522176080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5631,6 +5643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasEvent: 1
+  EffectPrefabs: {fileID: 1764133368391079113, guid: 883ce1c274bb23148aa60ee56d6cbcb6, type: 3}
+  position: {x: 3.5, y: -2, z: 0}
 --- !u!114 &2063258411
 MonoBehaviour:
   m_ObjectHideFlags: 0
