@@ -1070,6 +1070,8 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   canTalk: 0
   isTrigger: 0
   isFinishDialogue: 0
@@ -1483,8 +1485,10 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
-    onLeft: 1
+    onLeft: 0
     Name: 
     dialogueText: "\u201C\u662F\u9E2D\u5B50\u3002\u201D"
     isDone: 0
@@ -1495,6 +1499,8 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   canTalk: 0
   isTrigger: 0
   isFinishDialogue: 0
@@ -1634,8 +1640,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 98ee9a78102e4f34cb390d94d050a5d3, type: 3}
-    onLeft: 1
+  - faceImage: {fileID: 21300000, guid: 224f95630ca550c459aae2ea0ef2d21c, type: 3}
+    onLeft: 0
     Name: "\u5976\u5976"
     dialogueText: "\u54CE\u5440\uFF0C\u5BB6\u91CC\u76D0\u8981\u7528\u5149\u4E86\uFF0C\u4F60\u4EEC\u53BB\u4E70\u70B9\u56DE\u6765"
     isDone: 0
@@ -1658,6 +1664,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    hasToPause: 1
+    waitTime: 1
   - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
     onLeft: 1
     Name: "\u54E5\u54E5"
@@ -1670,6 +1678,8 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   canTalk: 0
   isTrigger: 1
   isFinishDialogue: 0
@@ -2893,8 +2903,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 98ee9a78102e4f34cb390d94d050a5d3, type: 3}
-    onLeft: 1
+  - faceImage: {fileID: 21300000, guid: 224f95630ca550c459aae2ea0ef2d21c, type: 3}
+    onLeft: 0
     Name: "\u5976\u5976"
     dialogueText: "\u521A\u5403\u5B8C\u997C\u5E72\u5C31\u8981\u51FA\u53BB\u73A9\u5417\uFF0C\u522B\u8D70\u8FDC\uFF0C\u5929\u5FEB\u9ED1\u4E86\u6CE8\u610F\u5B89\u5168\u3002"
     isDone: 0
@@ -2917,6 +2927,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    hasToPause: 1
+    waitTime: 1
   - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
     onLeft: 0
     Name: "\u54E5\u54E5"
@@ -2929,6 +2941,8 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   canTalk: 0
   isTrigger: 1
   isFinishDialogue: 0
@@ -3033,6 +3047,8 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls: []
+    hasToPause: 1
+    waitTime: 1
   canTalk: 0
   isTrigger: 0
   isFinishDialogue: 0
@@ -3632,6 +3648,14 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[4].Name
       value: "\u59B9\u59B9"
       objectReference: {fileID: 0}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: dialogueList.Array.data[0].onLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: dialogueList.Array.data[0].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 224f95630ca550c459aae2ea0ef2d21c, type: 3}
     - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
       propertyPath: OnFinishEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1

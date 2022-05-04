@@ -13,7 +13,6 @@ public class InventoryBag_SO : ScriptableObject
         {
             if (item.itemID == itemID)
                 return true;
-
         }
         return false;
     }

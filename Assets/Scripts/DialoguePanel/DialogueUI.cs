@@ -14,7 +14,7 @@ public class DialogueUI : MonoBehaviour
     public TextMeshProUGUI GetItemText;
     public GameObject GetItemPanel;
     private float closePanel = 0;
-    
+
     private void Awake()
     {
 
@@ -30,10 +30,10 @@ public class DialogueUI : MonoBehaviour
         EventHandler.ShowDialogueEvent -= OnShowDialogueEvent;
     }
 
-    private void Update() 
+    private void Update()
     {
         closePanel -= Time.deltaTime;
-        if(closePanel < 0)
+        if (closePanel < 0)
         {
             GetItemPanel.SetActive(false);
         }
@@ -48,7 +48,7 @@ public class DialogueUI : MonoBehaviour
     {
         if (dialoguePiece != null && !dialoguePiece.isDone)
         {
-            if(dialoguePiece.canRepeat)
+            if (dialoguePiece.canRepeat)
             {
                 dialoguePiece.isDone = false;
             }
@@ -63,6 +63,12 @@ public class DialogueUI : MonoBehaviour
                 faceLeft.sprite = dialoguePiece.faceImage;
                 nameLeft.text = dialoguePiece.Name;
             }
+            else if (dialoguePiece.Name == string.Empty)
+            {
+                faceLeft.gameObject.SetActive(false);
+                faceRight.gameObject.SetActive(false);
+                nameRight.text = string.Empty;
+            }
             else
             {
                 faceRight.gameObject.SetActive(true);
@@ -70,10 +76,16 @@ public class DialogueUI : MonoBehaviour
                 faceRight.sprite = dialoguePiece.faceImage;
                 nameRight.text = dialoguePiece.Name;
             }
-            
-            yield return dialogueText.DOText(dialoguePiece.dialogueText, 1f).WaitForCompletion();
+
+            yield return dialogueText.DOText(dialoguePiece.dialogueText, dialoguePiece.waitTime).WaitForCompletion();
 
             dialoguePiece.isDone = true;
+
+            if (dialoguePiece.hasToPause == false)
+            {
+                dialogueBox.SetActive(false);
+                yield break;
+            }
         }
         else
         {

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DataGUID))]
-public class Teleport : MonoBehaviour, ISaveable
+public class Teleport : MonoBehaviour
+//, ISaveable
 {
     public string sceneToGo;
     public Vector3 positionToGo;
@@ -11,8 +12,8 @@ public class Teleport : MonoBehaviour, ISaveable
     public string GUID => GetComponent<DataGUID>().guid;
     private void Start()
     {
-        ISaveable saveable = this;
-        saveable.RegisterSaveable();
+        // ISaveable saveable = this;
+        // saveable.RegisterSaveable();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,15 +33,15 @@ public class Teleport : MonoBehaviour, ISaveable
         CanTravel = true;
     }
 
-    public GameSaveData GenerateSaveData()
-    {
-        GameSaveData gameSave = new GameSaveData();
-        gameSave.CanTravel = CanTravel;
-        return gameSave;
-    }
+    // public GameSaveData GenerateSaveData()
+    // {
+    //     GameSaveData gameSave = new GameSaveData();
+    //     gameSave.CanTravel = CanTravel;
+    //     return gameSave;
+    // }
 
-    public void RestoreData(GameSaveData saveData)
-    {
-        CanTravel = saveData.CanTravel;
-    }
+    // public void RestoreData(GameSaveData saveData)
+    // {
+    //     CanTravel = saveData.CanTravel;
+    // }
 }
