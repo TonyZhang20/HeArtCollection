@@ -16,6 +16,7 @@ public class ItemPickup : MonoBehaviour
                 GetComponent<GoDWorld>().Transfrom();
             }
             InventoryManager.Instance.AddItem(item);
+            GameObject.FindGameObjectWithTag("DialoageCanvas").GetComponent<DialogueUI>().ShowPanel("你获得了" + item.itemDetails.itemName);
         }
         //Debug.Log(InventoryManager.Instance.GetItemDetails(1004).canPickup);
     }

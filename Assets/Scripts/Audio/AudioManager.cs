@@ -13,8 +13,6 @@ public class AudioManager : SingleTon<AudioManager>
 
     [Header("AudioSource")]
     public AudioSource startAudio;
-    public AudioSource repAudio;
-    public AudioSource loopAudio;
 
     [Header("AudioMixer")]
     public AudioMixer audioMixer;
@@ -60,7 +58,7 @@ public class AudioManager : SingleTon<AudioManager>
     private void OnAfterSceneLoadEvent()
     {
 
-        if(isBegin == true)
+        if (isBegin == true)
         {
             isBegin = false;
             return;
@@ -89,6 +87,7 @@ public class AudioManager : SingleTon<AudioManager>
         follow = StartCoroutine(AudioPlayFinished(firstMusic.soundClip.length, null, sceneSound));
 
     }
+
     private IEnumerator AudioPlayFinished(float time, UnityAction callback, SceneSoundItem sceneSound)
     {
         yield return new WaitForSeconds(time);
@@ -110,9 +109,21 @@ public class AudioManager : SingleTon<AudioManager>
     {
         if (music != null)
         {
-            ambientSnapShot.TransitionTo(3f);
-            yield return new WaitForSeconds(1f);
-            PlayMusicSoundClip(music, 3f);
+            if (SceneManager.GetActiveScene().name != "PlayerScenes")
+            {
+                Debug.Log("Run");
+                ambientSnapShot.TransitionTo(1f);
+                yield return new WaitForSeconds(1f);
+            }
+
+            if(SceneManager.GetActiveScene().name != "PlayerScenes")
+            {
+                PlayMusicSoundClip(music, 3f);
+            }
+            else
+            {
+                PlayMusicSoundClip(music, 0.1f);
+            }
         }
     }
 

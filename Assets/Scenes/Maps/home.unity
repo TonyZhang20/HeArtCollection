@@ -1475,7 +1475,7 @@ MonoBehaviour:
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
     onLeft: 1
-    Name: 
+    Name: "\u59B9\u59B9"
     dialogueText: "\u201C\u767D\u5929\u9E45\uFF01\u201D"
     isDone: 0
     canRepeat: 1
@@ -1489,7 +1489,7 @@ MonoBehaviour:
     waitTime: 1
   - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
     onLeft: 0
-    Name: 
+    Name: "\u54E5\u54E5"
     dialogueText: "\u201C\u662F\u9E2D\u5B50\u3002\u201D"
     isDone: 0
     canRepeat: 1
@@ -2930,7 +2930,7 @@ MonoBehaviour:
     hasToPause: 1
     waitTime: 1
   - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
-    onLeft: 0
+    onLeft: 1
     Name: "\u54E5\u54E5"
     dialogueText: "\u597D\u7684\u5976\u5976\uFF0C\u6211\u4EEC\u665A\u996D\u524D\u5C31\u56DE\u6765"
     isDone: 0

@@ -8,6 +8,4 @@ public class PlayerStats_SO : ScriptableObject
     public float health;
     public float maxHealth;
     public float Money;
-
-    
 }
