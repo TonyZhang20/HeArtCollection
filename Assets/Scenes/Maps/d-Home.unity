@@ -313,7 +313,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: b073f1789f8e9fa47829cbee7812f14b, type: 3}
+  - faceImage: {fileID: 21300000, guid: ffc56d9594db5e648831746df4970fd1, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u54C7\u554A\uFF01\u597D\u5947\u602A\u7684\u5730\u65B9\uFF01"

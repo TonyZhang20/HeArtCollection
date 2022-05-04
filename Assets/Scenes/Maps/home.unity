@@ -1058,7 +1058,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u6211\u8BB0\u5F97\u5C0F\u5356\u90E8\u4E0D\u5728\u8FD9\u8FB9\u5427\uFF1F"
@@ -1473,7 +1473,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+  - faceImage: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u201C\u767D\u5929\u9E45\uFF01\u201D"
@@ -3656,6 +3656,18 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[0].faceImage
       value: 
       objectReference: {fileID: 21300000, guid: 224f95630ca550c459aae2ea0ef2d21c, type: 3}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: dialogueList.Array.data[1].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: dialogueList.Array.data[3].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
+    - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
+      propertyPath: dialogueList.Array.data[4].faceImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
     - target: {fileID: 7684727955141949845, guid: db1c7e7399bc5d045a0e25a4d864ed8d, type: 3}
       propertyPath: OnFinishEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1

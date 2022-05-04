@@ -4358,7 +4358,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 0
   dialogueList:
-  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+  - faceImage: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u662F\u5C0F\u732B\u54AA\uFF0C\u597D\u53EF\u7231\uFF01"
@@ -4372,7 +4372,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
+  - faceImage: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u54E5\u54E5\u4F60\u6709\u5403\u7684\u5417\uFF0C\u6211\u60F3\u5582\u732B\u732B\uFF01"
@@ -4428,7 +4428,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u5B83\u521A\u624D\u597D\u50CF\u8BF4\u4EC0\u4E48\u4E86"
@@ -4456,7 +4456,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 387219cfdd096874aa428e7b4b255d7f, type: 3}
+  - faceImage: {fileID: 21300000, guid: 6f81e6634bb932841b257db16e6bdb9c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u6211\u4E0D\u8D70\uFF01\u6211\u8981\u5582\u732B\u732B\uFF01"
@@ -4928,7 +4928,7 @@ PrefabInstance:
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[1].faceImage
       value: 
-      objectReference: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+      objectReference: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     - target: {fileID: 4736490083297719359, guid: c6f720091d31ae8499238d7ed17b16eb, type: 3}
       propertyPath: dialogueList.Array.data[0].StopDialogue
       value: 0

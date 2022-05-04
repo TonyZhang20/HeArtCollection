@@ -11,7 +11,7 @@ public class DialogueUI : MonoBehaviour
     public Text dialogueText;
     public Image faceRight, faceLeft;
     public TextMeshProUGUI nameRight, nameLeft;
-    public TextMeshProUGUI GetItemText;
+    public Text GetItemText;
     public GameObject GetItemPanel;
     private float closePanel = 0;
 
