@@ -14,14 +14,17 @@ public class MusicHolder : MonoBehaviour
             musicAlphas[i].index = i;
             musicAlphas[i].value += totalVelum * (i + 1);
         }
+
     }
+
+
 
     private void Start()
     {
 
     }
 
-    public void ChangeChildAlpha(int index)
+    public void ChangeChildAlpha(int index = 12)
     {
         float count = 0;
         for (int i = 0; i < musicAlphas.Length; i++)

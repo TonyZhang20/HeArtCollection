@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         {
             inputX = 0;
             inputY = 0;
+            isMoving = false;
         }
 
         SetAnimation();

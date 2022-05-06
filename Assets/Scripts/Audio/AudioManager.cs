@@ -57,35 +57,38 @@ public class AudioManager : SingleTon<AudioManager>
 
     private void OnAfterSceneLoadEvent()
     {
-
         if (isBegin == true)
         {
             isBegin = false;
             return;
         }
-
         string currentScene = SceneManager.GetActiveScene().name;
 
         SceneSoundItem sceneSound = sceneSoundData.GetSceneSoundItem(currentScene);
+
+        // Debug.Log(currentScene);
 
         if (sceneSound == null)
             return;
 
         SoundDeails firstMusic = soundDetailsData.GetSoundDeails(sceneSound.FirstMusic);
 
-        if (soundRoutine != null)
-        {
-            StopCoroutine(soundRoutine);
-        }
 
-        if (follow != null)
+        if (currentMusic != sceneSound.FirstMusic)
         {
-            StopCoroutine(follow);
-        }
-        currentMusic = sceneSound.FirstMusic;
-        soundRoutine = StartCoroutine(PlaySoundRoutine(firstMusic));
-        follow = StartCoroutine(AudioPlayFinished(firstMusic.soundClip.length, null, sceneSound));
+            if (soundRoutine != null)
+            {
+                StopCoroutine(soundRoutine);
+            }
 
+            if (follow != null)
+            {
+                StopCoroutine(follow);
+            }
+            currentMusic = sceneSound.FirstMusic;
+            soundRoutine = StartCoroutine(PlaySoundRoutine(firstMusic));
+            follow = StartCoroutine(AudioPlayFinished(firstMusic.soundClip.length, null, sceneSound));
+        }
     }
 
     private IEnumerator AudioPlayFinished(float time, UnityAction callback, SceneSoundItem sceneSound)
@@ -96,12 +99,12 @@ public class AudioManager : SingleTon<AudioManager>
         if (sceneSound.SecondMusic != SoundName.None && sceneSound.SecondMusic != currentMusic)
         {
             AfterSecondMusic(sceneSound);
-            Debug.Log("RunSecond");
+            //Debug.Log("RunSecond");
         }
         else if (sceneSound.LastMusic != SoundName.None && sceneSound.LastMusic != currentMusic)
         {
             AfterThirdMusic(sceneSound);
-            Debug.Log("Run Third");
+            //Debug.Log("Run Third");
         }
         #endregion
     }
@@ -111,12 +114,12 @@ public class AudioManager : SingleTon<AudioManager>
         {
             if (SceneManager.GetActiveScene().name != "PlayerScenes")
             {
-                Debug.Log("Run");
+                //Debug.Log("Run");
                 ambientSnapShot.TransitionTo(1f);
                 yield return new WaitForSeconds(1f);
             }
 
-            if(SceneManager.GetActiveScene().name != "PlayerScenes")
+            if (SceneManager.GetActiveScene().name != "PlayerScenes")
             {
                 PlayMusicSoundClip(music, 3f);
             }

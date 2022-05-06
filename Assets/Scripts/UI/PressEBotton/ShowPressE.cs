@@ -25,6 +25,12 @@ public class ShowPressE : MonoBehaviour
         image = pickCanvas.transform.Find("PressE");
     }
 
+    public void StopShow()
+    {
+        show = false;
+        image.gameObject.SetActive(false);
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 513230071}
   m_Layer: 0
   m_Name: suvey
-  m_TagString: Untagged
+  m_TagString: DialogueParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1724,7 +1724,7 @@ GameObject:
   - component: {fileID: 725912206}
   m_Layer: 0
   m_Name: Dialogue
-  m_TagString: Untagged
+  m_TagString: DialogueParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2303,7 +2303,19 @@ MonoBehaviour:
   ID: 0
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 929519764}
+        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
     onLeft: 0
@@ -3179,7 +3191,7 @@ MonoBehaviour:
   - faceImage: {fileID: 21300000, guid: 745448ca9235527448e648ffa99fd688, type: 3}
     onLeft: 0
     Name: '?'
-    dialogueText: "\u6FC2\u30E5\u53CD\u5A06\u0444\u6E47\u9357\u6C31\u57CD\u9470\u5C7D\u82DF\u95C8\u70B6\u59AD\u935D\uFFFD\u6924\u8F70\u7A76\u9359\u621E\u5ABA"
+    dialogueText: "\u93B5\u64B3\u7584C\u941C\u677F\u6E6A\u935B\u5822\u5E47\u9351\u7BE4S\u9428\u52EF\u69FB\u93B6\u3086\u589C\u6FC2\u6940\u62F0\u93C4\uFFFD"
     isDone: 0
     canRepeat: 1
     hasEvent: 0

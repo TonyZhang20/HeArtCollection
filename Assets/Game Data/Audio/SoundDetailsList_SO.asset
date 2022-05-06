@@ -36,16 +36,16 @@ MonoBehaviour:
     soundVolume: 0.9
   - soundName: 8
     soundClip: {fileID: 8300000, guid: 6cadaee04aba886499978aa620f9acc7, type: 3}
-    soundVolume: 0.9
+    soundVolume: 0.85
   - soundName: 9
     soundClip: {fileID: 8300000, guid: 66a9de2b530ad584a8f730367a6eef1f, type: 3}
-    soundVolume: 0.9
+    soundVolume: 0.85
   - soundName: 10
     soundClip: {fileID: 8300000, guid: 9cecafc6da5eb5344bfd51dfb6c1c4c0, type: 3}
-    soundVolume: 0.9
+    soundVolume: 0.85
   - soundName: 11
     soundClip: {fileID: 8300000, guid: 87148ce1308ddc649987e9b06ba8d10c, type: 3}
-    soundVolume: 0.9
+    soundVolume: 0.85
   - soundName: 12
     soundClip: {fileID: 8300000, guid: e205a176635b8b14296664f0e26d24d1, type: 3}
     soundVolume: 0.7

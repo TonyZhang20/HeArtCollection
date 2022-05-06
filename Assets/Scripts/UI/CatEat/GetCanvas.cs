@@ -79,4 +79,9 @@ public class GetCanvas : MonoBehaviour
     {
         EventHandler.CallTransitionEvent("town", new Vector3(-11.5f, -8f,0f));
     }
+
+    public void DecreaseHotDog()
+    {
+        InventoryManager.Instance.ReduceItem(1004);
+    }
 }

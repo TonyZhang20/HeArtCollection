@@ -14,10 +14,6 @@ public class ItemPickup : MonoBehaviour
         if (canPickup && Input.GetKeyDown(KeyCode.E))
         {
             Item item = GetComponent<Item>();
-            if(GetComponent<GoDWorld>() != null && GetComponent<GoDWorld>().CheckItem() == true)
-            {
-                GetComponent<GoDWorld>().Transfrom();
-            }
             InventoryManager.Instance.AddItem(item);
             GameObject.FindGameObjectWithTag("DialoageCanvas").GetComponent<DialogueUI>().ShowPanel("你获得了" + item.itemDetails.itemName);
         }

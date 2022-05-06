@@ -13,7 +13,7 @@ public class MusicAlpha : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(CallParent);
         image = GetComponent<Image>();
-        ChangeAlphaToZero();
+        ChangeAlphaToOne();
     }
 
     private void CallParent()

@@ -1861,7 +1861,7 @@ GameObject:
   - component: {fileID: 824615070}
   m_Layer: 0
   m_Name: "\u4E92\u52A8Trigger"
-  m_TagString: DialoageCanvas
+  m_TagString: DialogueParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2424,7 +2424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107295728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.59, y: 4.31, z: 0.026105503}
+  m_LocalPosition: {x: -2.268, y: 5.704, z: 0.026105503}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4428,19 +4428,7 @@ MonoBehaviour:
   ID: 202
   OnFinishEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   dialogueList:
   - faceImage: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
     onLeft: 1
@@ -4470,7 +4458,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+  - faceImage: {fileID: 21300000, guid: 45fdd0e9dcb128440b15a4b106b387af, type: 3}
     onLeft: 0
     Name: "\u5C0F\u732B"
     dialogueText: "\u55B5~"
@@ -4498,7 +4486,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+  - faceImage: {fileID: 21300000, guid: 12cbb0a6b41763e418bb2f2ad60755e8, type: 3}
     onLeft: 0
     Name: "\u5C0F\u732B"
     dialogueText: "\u5567"
@@ -4554,7 +4542,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+  - faceImage: {fileID: 21300000, guid: 45fdd0e9dcb128440b15a4b106b387af, type: 3}
     onLeft: 0
     Name: "\u5C0F\u732B"
     dialogueText: "\u55B5"
@@ -4632,21 +4620,33 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u5C0F\u732B\u54AA\u5FEB\u6765\u5403\uFF01"
     isDone: 0
     canRepeat: 0
-    hasEvent: 0
+    hasEvent: 1
     StopDialogue: 1
     hasTag: 1
     AfterConversation:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2094604475}
+          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
+          m_MethodName: DecreaseHotDog
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 7a107dc9749255148bbb163fe3543406, type: 3}
+  - faceImage: {fileID: 21300000, guid: 45fdd0e9dcb128440b15a4b106b387af, type: 3}
     onLeft: 0
     Name: "\u5C0F\u732B"
     dialogueText: '!'
@@ -4673,7 +4673,7 @@ MonoBehaviour:
     hasToPause: 1
     waitTime: 1
   - faceImage: {fileID: 21300000, guid: ff4cf3617c639804890cb5bc8c415936, type: 3}
-    onLeft: 1
+    onLeft: 0
     Name: "\u54E5\u54E5"
     dialogueText: "\u732B\u732B\u5C41\u80A1\u4E0B\u9762\u597D\u50CF\u538B\u7740\u4EC0\u4E48"
     isDone: 0
@@ -4686,8 +4686,8 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 1d9afd97c99aa6d4582452ff39003c86, type: 3}
-    onLeft: 0
+  - faceImage: {fileID: 21300000, guid: 93fc6fe0301eb7a45ab04fe93d2983d5, type: 3}
+    onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u662F\u7535\u6C60\u54C7\uFF01"
     isDone: 0
@@ -4701,7 +4701,7 @@ MonoBehaviour:
     hasToPause: 1
     waitTime: 1
   - faceImage: {fileID: 21300000, guid: 872c98d91824b184e89296adfa6585a3, type: 3}
-    onLeft: 1
+    onLeft: 0
     Name: "\u54E5\u54E5"
     dialogueText: "\u4E0D\u77E5\u9053\u8FD8\u80FD\u7528\u5417\uFF0C\u770B\u8D77\u6765\u86EE\u65B0\u7684\u3002"
     isDone: 0
@@ -4714,7 +4714,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u6E38\u620F\u673A\uFF01\u521A\u597D\u7F3A\u4E24\u8282\u7535\u6C60\u6765\u7740\u2026"
@@ -4729,7 +4729,7 @@ MonoBehaviour:
     hasToPause: 1
     waitTime: 1
   - faceImage: {fileID: 21300000, guid: cc8f0266ff03b324980ae35dc5c5c9f3, type: 3}
-    onLeft: 0
+    onLeft: 1
     Name: "\u54E5\u54E5"
     dialogueText: "\u4F60\u54EA\u6765\u7684\u6E38\u620F\u673A\uFF1F"
     isDone: 0
@@ -4742,7 +4742,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u6211\u4ECE\u9601\u697C\u91CC\u7FFB\u51FA\u6765\u7684\uFF0C\u5976\u5976\u8BF4\uFF0C\u662F\u7238\u7238\u5C0F\u65F6\u5019\u73A9\u7684\u3002"
@@ -4770,7 +4770,7 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: b073f1789f8e9fa47829cbee7812f14b, type: 3}
+  - faceImage: {fileID: 21300000, guid: ffc56d9594db5e648831746df4970fd1, type: 3}
     onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u603B\u4E0D\u4F1A\u7206\u70B8\u5427\uFF01"
@@ -4838,8 +4838,8 @@ MonoBehaviour:
         m_Calls: []
     hasToPause: 1
     waitTime: 1
-  - faceImage: {fileID: 21300000, guid: 4fcfe9949a942884197f48986307a5c3, type: 3}
-    onLeft: 0
+  - faceImage: {fileID: 21300000, guid: 89ff84b6c836bdd43b1cf0833354f60c, type: 3}
+    onLeft: 1
     Name: "\u59B9\u59B9"
     dialogueText: "\u563F\u563F\uFF0C\u5C45\u7136\u8FD8\u80FD\u73A9\u8D2A\u5403\u86C7...
       ..."
@@ -4851,9 +4851,21 @@ MonoBehaviour:
     AfterConversation:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2094604475}
-          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
-          m_MethodName: TransLate
+        - m_Target: {fileID: 2094604477}
+          m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
+          m_MethodName: Finish
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2094604476}
+          m_TargetAssemblyTypeName: ShowPressE, Assembly-CSharp
+          m_MethodName: StopShow
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4865,7 +4877,19 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 2094604477}
           m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
-          m_MethodName: Finish
+          m_MethodName: SkipConverSation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2094604475}
+          m_TargetAssemblyTypeName: GetCanvas, Assembly-CSharp
+          m_MethodName: TransLate
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -119,6 +119,20 @@ public class InventoryManager : SingleTon<InventoryManager>, ISaveable
         }
     }
 
+    public void ReduceItem(int ID)
+    {
+        for (int i = 0; i < playerBag.itemList.Count; i++)
+        {
+            var item = new InventoryItem { itemID = 0, itemAmount = 0 };
+            if (playerBag.itemList[i].itemID == ID)
+            {
+                playerBag.itemList[i] = item;
+                EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
+                return;
+            }
+        }
+    }
+
     public GameSaveData GenerateSaveData()
     {
         GameSaveData saveData = new GameSaveData();

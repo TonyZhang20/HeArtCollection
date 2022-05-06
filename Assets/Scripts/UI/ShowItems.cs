@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(SlotUI))]
 public class ShowItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private SlotUI slotUI;
-
+    private Button button;
     private InventoryUI inventoryUI => GetComponentInParent<InventoryUI>();
+    public bool showPanel = false;
 
-    private void Start() 
+    private void Start()
     {
         slotUI = GetComponent<SlotUI>();
+        button = transform.GetChild(0).GetComponent<Button>();
+        button.onClick.AddListener(CallParentToShowPanel);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(slotUI.itemAmount != 0)
+        if (slotUI.itemAmount != 0)
         {
             inventoryUI.itemTip.gameObject.SetActive(true);
             inventoryUI.itemTip.SetupTip(slotUI.itemDetails);
@@ -30,9 +34,9 @@ public class ShowItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
-        if(inventoryUI != null)
+        if (inventoryUI != null)
         {
             inventoryUI.itemTip.gameObject.SetActive(false);
         }
@@ -42,4 +46,11 @@ public class ShowItems : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         inventoryUI.itemTip.gameObject.SetActive(false);
     }
+
+    public void CallParentToShowPanel()
+    {
+        Debug.Log("Run");
+        inventoryUI.showPanel(slotUI.itemDetails.itemID);
+    }
+
 }

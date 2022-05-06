@@ -55,6 +55,11 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    public void SkipConverSation()
+    {
+        StartCoroutine(DialogueRoutine());
+    }
+
     public void FillStack()
     {
         dialogueStack = new Stack<DialoguePiece>();
